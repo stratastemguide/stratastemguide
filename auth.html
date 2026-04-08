@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Strata STEM Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+
+    <!-- Social Media Meta Tags -->
+    <meta name="description" content="Sign in to Strata STEM Guide — Access your personalized learning dashboard and track your progress.">
+    <meta property="og:title" content="Login | Strata STEM Guide">
+    <meta property="og:description" content="Your gateway to elite STEM education. Sign up or log in to continue your journey.">
+    <meta property="og:image" content="https://knowledgefrontier.github.io/logo.png">
+    <meta property="og:type" content="website">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem 1.5rem 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            z-index: 20;
+        }
+
+        .back-btn:hover {
+            color: #fff;
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .auth-container {
+                padding-top: 7rem;
+            }
+            .back-btn {
+                top: 7rem;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .back-btn:hover {
+                transform: translateX(-50%) translateY(-2px);
+            }
+        }
+
+        .auth-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            box-shadow:
+                0 20px 40px -12px rgba(0, 0, 0, 0.5),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+            animation: fadeIn 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: inherit;
+            padding: 1.5px;
+            background: linear-gradient(135deg, #0ea5e9, #10b981, #fcd34d);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .auth-header h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fcd34d, #10b981, #38bdf8, #0ea5e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .auth-header p {
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.85rem;
+        }
+
+        .form-group {
+            margin-bottom: 0.9rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            padding-right: 2.5rem;
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: #0a0c14;
+            color: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #10b981;
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.8rem;
+        }
+
+        .error-message {
+            color: #ff4d4d;
+            font-size: 0.8rem;
+            margin-top: 0.4rem;
+            display: none;
+            text-align: center;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+            margin-top: 0.8rem;
+            border: none;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #10b981, #0ea5e9);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .toggle-auth {
+            text-align: center;
+            margin-top: 1.2rem;
+            color: rgba(255, 255, 255, 0.45);
+            font-size: 0.8rem;
+        }
+
+        .toggle-auth span {
+            color: #10b981;
+            cursor: pointer;
+            font-weight: 600;
+            margin-left: 0.3rem;
+            transition: color 0.2s;
+        }
+
+        .toggle-auth span:hover {
+            color: #38bdf8;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.35);
+            font-size: 0.7rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        .password-toggle:hover {
+            color: #10b981;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 1rem 0;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 0.75rem;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .divider span {
+            padding: 0 0.8rem;
+        }
+
+        .google-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            font-size: 0.85rem;
+        }
+
+        .google-btn:hover {
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-color: rgba(255, 255, 255, 0.3) !important;
+        }
+
+        /* Small mobile */
+        @media (max-width: 480px) {
+            .auth-card {
+                padding: 1.5rem;
+                border-radius: 20px;
+                max-width: 100%;
+            }
+            .auth-header h1 {
+                font-size: 1.5rem;
+            }
+            .auth-header {
+                margin-bottom: 1rem;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+            .auth-btn {
+                padding: 0.7rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+    <div class="grid-overlay"></div>
+
+    <!-- Global Navbar logic -->
+    <script>
+        window.navbarConfig = { activePage: 'auth', rootPath: './' };
+    </script>
+    <script src="navbar.js"></script>
+
+    <div class="auth-container">
+        <a href="index.html" class="back-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Home
+        </a>
+
+        <!-- ===== SIGN IN CARD ===== -->
+        <div class="auth-card" id="signin-card">
+            <div class="auth-header">
+                <h1>Welcome Back</h1>
+                <p>Sign in to continue learning</p>
+            </div>
+            <form id="signin-form">
+                <div class="form-group" style="margin-bottom: 0.4rem;">
+                    <label for="signin-email">Email</label>
+                    <input type="email" id="signin-email" placeholder="you@example.com" required>
+                </div>
+                <div style="font-size: 0.7rem; color: rgba(255, 255, 255, 0.35); margin-bottom: 0.8rem; text-align: right;">
+                    Check your <strong>Spam</strong> folder for verification!
+                </div>
+                <div class="form-group">
+                    <label for="signin-password">Password</label>
+                    <div style="position: relative;">
+                        <input type="password" id="signin-password" placeholder="••••••••" required>
+                        <span class="password-toggle" id="toggle-signin-password">Show</span>
+                    </div>
+                </div>
+                <div style="text-align: right; margin-top: 0.3rem; margin-bottom: 0.5rem;">
+                    <span id="to-forgot" style="color: #10b981; font-size: 0.75rem; cursor: pointer; font-weight: 500; transition: color 0.2s;">Forgot Password?</span>
+                </div>
+                <div id="signin-error" class="error-message"></div>
+                <button type="submit" class="auth-btn btn-primary">Sign In</button>
+
+                <div class="divider"><span>OR</span></div>
+
+                <button type="button" id="google-signin-btn" class="auth-btn btn-outline google-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" style="margin-right: 8px;">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    Continue with Google
+                </button>
+            </form>
+            <div class="toggle-auth">
+                Don't have an account? <span id="to-signup">Sign Up</span>
+            </div>
+        </div>
+
+        <!-- ===== SIGN UP CARD ===== -->
+        <div class="auth-card" id="signup-card" style="display: none;">
+            <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Join the future of e-learning</p>
+            </div>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" placeholder="Your full name" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="signup-age">Age</label>
+                        <input type="number" id="signup-age" placeholder="14" min="5" max="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-country">Country</label>
+                        <select id="signup-country" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="India">India</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <div style="position: relative;">
+                        <input type="password" id="signup-password" placeholder="••••••••" required>
+                        <span class="password-toggle" id="toggle-signup-password">Show</span>
+                    </div>
+                </div>
+                <div id="signup-error" class="error-message"></div>
+                <button type="submit" class="auth-btn btn-primary">Create Account</button>
+
+                <div class="divider"><span>OR</span></div>
+
+                <button type="button" id="google-signup-btn" class="auth-btn btn-outline google-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" style="margin-right: 8px;">
+                        <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                        <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                        <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                        <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                    Continue with Google
+                </button>
+            </form>
+            <div class="toggle-auth">
+                Already have an account? <span id="to-signin">Sign In</span>
+            </div>
+        </div>
+
+        <!-- ===== COMPLETE PROFILE CARD ===== -->
+        <div class="auth-card" id="profile-card" style="display: none;">
+            <div class="auth-header">
+                <h1>Complete Your Profile</h1>
+                <p>Just a few more details to get started</p>
+            </div>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="profile-name">Full Name</label>
+                    <input type="text" id="profile-name" placeholder="Your full name" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="profile-age">Age</label>
+                        <input type="number" id="profile-age" placeholder="14" min="5" max="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-country">Country</label>
+                        <select id="profile-country" required>
+                            <option value="" disabled selected>Select</option>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="India">India</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="profile-error" class="error-message"></div>
+                <button type="submit" class="auth-btn btn-primary">Save and Continue</button>
+            </form>
+        </div>
+
+        <!-- ===== VERIFICATION CARD ===== -->
+        <div class="auth-card" id="verify-card" style="display: none;">
+            <div class="auth-header">
+                <div style="background: rgba(16, 185, 129, 0.1); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; border: 1px solid rgba(16, 185, 129, 0.2);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </div>
+                <h1>Check your email</h1>
+                <p>We've sent a verification link. Please verify to continue.</p>
+            </div>
+            <div style="text-align: center; color: rgba(255, 255, 255, 0.6); font-size: 0.8rem; margin-bottom: 1.2rem;">
+                Verify, then log in. <br>
+                <span style="color: rgba(255, 255, 255, 0.35); font-size: 0.75rem;">Don't see it? Check your <strong>Spam</strong> folder.</span>
+            </div>
+            <button type="button" class="auth-btn btn-primary" id="back-to-login" style="margin-bottom: 0.6rem;">Sign In</button>
+            <button type="button" class="auth-btn btn-outline" id="resend-email" style="font-size: 0.8rem;">Resend Verification Email</button>
+            <div id="verify-success" class="error-message" style="color: #10b981; margin-top: 0.8rem;">Verification email sent!</div>
+        </div>
+
+        <!-- ===== FORGOT PASSWORD CARD ===== -->
+        <div class="auth-card" id="forgot-card" style="display: none;">
+            <div class="auth-header">
+                <div style="background: rgba(14, 165, 233, 0.1); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; border: 1px solid rgba(14, 165, 233, 0.2);">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                </div>
+                <h1>Reset Password</h1>
+                <p>Enter your email and we'll send a reset link</p>
+            </div>
+            <form id="forgot-form">
+                <div class="form-group">
+                    <label for="forgot-email">Email</label>
+                    <input type="email" id="forgot-email" placeholder="you@example.com" required>
+                </div>
+                <div id="forgot-error" class="error-message"></div>
+                <div id="forgot-success" class="error-message" style="color: #10b981;">Password reset email sent! Check your inbox.</div>
+                <button type="submit" class="auth-btn btn-primary">Send Reset Link</button>
+            </form>
+            <div class="toggle-auth">
+                Remember your password? <span id="forgot-back-signin">Sign In</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="auth.js"></script>
+</body>
+</html>
+

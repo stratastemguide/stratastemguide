@@ -1,0 +1,208 @@
+/* Account Page Styling */
+.account-container {
+    padding: 8rem 5% 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+.profile-card {
+    background: var(--liquid-bg);
+    backdrop-filter: blur(var(--liquid-blur)) saturate(180%);
+    -webkit-backdrop-filter: blur(var(--liquid-blur)) saturate(180%);
+    border: 1px solid var(--liquid-border);
+    border-radius: 40px;
+    padding: 4rem;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
+}
+
+.profile-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg, var(--accent-emerald), var(--accent-lightblue), var(--accent-yellow));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+}
+
+.avatar-wrapper {
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    margin: 0 auto 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--accent-emerald);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+    position: relative;
+}
+
+.avatar-wrapper svg {
+    color: var(--accent-emerald);
+}
+
+.profile-name {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    background: var(--text-gradient-main);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profile-email {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 3rem;
+}
+
+.profile-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.info-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--liquid-border);
+    padding: 1.5rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.info-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.info-value {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 600;
+}
+
+.account-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.profile-btn {
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    border: 1px solid var(--liquid-border);
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    text-decoration: none;
+}
+
+.profile-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.logout-btn {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.logout-btn:hover {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.5);
+}
+
+@media (max-width: 768px) {
+    .profile-card {
+        padding: 2.5rem 1.5rem;
+    }
+    .profile-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Top Nav Actions (Back to Home) */
+.top-nav-actions {
+    position: fixed;
+    top: 2.8rem;
+    left: 4rem;
+    z-index: 1000;
+}
+
+.back-home-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.8rem 1.8rem;
+    border-radius: 100px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.back-home-pill:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-5px);
+    border-color: var(--accent-emerald);
+    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.2);
+}
+
+.back-home-pill svg {
+    color: var(--accent-emerald);
+}
+
+@media (max-width: 1200px) {
+    .top-nav-actions {
+        left: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .top-nav-actions {
+        display: none; /* Hide top-left pill on mobile, button in card persists */
+    }
+}

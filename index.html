@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strata STEM Guide | The guide to IJSO and Local Exams</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+    <!-- Preload critical assets for LCP -->
+    <link rel="preload" href="logo.png" as="image" fetchpriority="high">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    
+
+    <!-- Social Media Meta Tags (WhatsApp, Instagram, Facebook, etc.) -->
+    <meta name="description" content="Strata STEM Guide — World's leading platform for Science and Mathematics excellence. Advanced learning for Olympiads and competitive exams.">
+    <meta property="og:title" content="Strata STEM Guide | Toward Excellence">
+    <meta property="og:description" content="Elite Science and Mathematics education for students worldwide. Curated learning paths for International Olympiads.">
+    <meta property="og:image" content="https://knowledgefrontier.github.io/logo.png"> <!-- Note: Needs full canonical URL for some platforms -->
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://knowledgefrontier.github.io/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Strata STEM Guide">
+    <meta name="twitter:description" content="Beyond Learning toward Excellence. Sri Lanka's premier STEM training platform.">
+</head>
+
+<body>
+    <div class="scroll-progress"></div>
+
+    <!-- Backgrounds -->
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+    <div class="grid-overlay"></div>
+
+    <!-- Global Navbar logic -->
+    <script>
+        window.navbarConfig = { activePage: 'home', rootPath: './' };
+    </script>
+    <script src="navbar.js"></script>
+
+    <main>
+        <div id="user-greeting" class="user-greeting reveal"></div>
+        <!-- Home Section -->
+        <section class="hero" id="home">
+            <h1 id="hero-title" class="reveal">Beyond Learning. <br>Toward Excellence.</h1>
+            <p id="hero-subtitle" class="reveal">The most advanced e-learning platform in Sri Lanka for Science and Mathematics. Your
+                journey to international olympiad success starts here.</p>
+            <div class="hero-actions reveal">
+                <a href="olympiad-guide/ijso/Theory.html" class="cta-btn">Learning Portal</a>
+                <a href="subjects.html" class="cta-btn outline">Competition Guide</a>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section" id="stats">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" class="stat-icon">
+                        <path d="M7 18c.5-5 4-8 5-8s4.5 3 5 8" />
+                        <path d="M7 18c-1-1.5-2-1-3-1" />
+                        <path d="M7 15c-1.5-1-2.5 0-3.5 0" />
+                        <path d="M8 12c-2-1-3 1-4 1" />
+                        <path d="M17 18c1-1.5 2-1 3-1" />
+                        <path d="M17 15c1.5-1 2.5 0 3.5 0" />
+                        <path d="M16 12c2-1 3 1 4 1" />
+                        <circle cx="12" cy="7" r="1" fill="currentColor" />
+                    </svg>
+                    <p>built by former olympians</p>
+                </div>
+                <div class="stat-item reveal">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="stat-icon">
+                        <path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                        </path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                    <p>Free access for all students and mentors</p>
+                </div>
+                <div class="stat-item reveal">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="stat-icon">
+                        <path
+                            d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                        </path>
+                    </svg>
+                    <p>Problem solving focused learning</p>
+                </div>
+            </div>
+        </section>
+        <!-- Bento Features -->
+        <section id="subjects">
+            <div class="section-title reveal">
+                <h2>Strata STEM Guide</h2>
+                <p>Curated learning paths with a focus on deep conceptual understanding.</p>
+            </div>
+            <div class="bento-grid">
+                <div class="card bento-item item-large reveal" onclick="window.location.href='olympiad-guide/ijso/Theory.html'"
+                    style="cursor: pointer;">
+                    <div style="margin-bottom: auto; font-size: 3.5rem; font-weight: 900; opacity: 0.1;">01</div>
+                    <h3>Theory</h3>
+                    <p>Interactive learning of beyond the standard curriculum, suited for Science and Mathematics competition</p>
+                </div>
+                <div class="card bento-item reveal">
+                    <div style="margin-bottom: auto; font-size: 1.5rem; opacity: 0.1;">02</div>
+                    <h3>Past papers</h3>
+                    <p>Access our entire collection of past papers and solutions curated by our team</p>
+                </div>
+                <div class="card bento-item reveal">
+                    <div style="margin-bottom: auto; font-size: 1.5rem; opacity: 0.1;">03</div>
+                    <h3>General</h3>
+                    <p>Get our general guides and other resources</p>
+                </div>
+                <div class="card bento-item item-wide reveal">
+                    <div style="margin-bottom: auto; font-size: 1.5rem; opacity: 0.1;">04</div>
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+                        <div>
+                            <h3>Practise portal</h3>
+                            <p>Prepare for your competitions by solving and reviewing our questions made to replicate the difficulty of the competition</p>
+                        </div>
+                        <a href="#" class="cta-btn outline"
+                            style="padding: 0.6rem 1.5rem; font-size: 0.75rem;">Explore All</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section id="reviews">
+            <div class="section-title reveal" style="text-align: center;">
+                <h2>Student <span class="gradient-text">Reviews</span></h2>
+            </div>
+
+            <div class="reviews-container reveal">
+                <div class="reviews-track">
+                    <!-- Review Card 1 -->
+                    <div class="card review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"The teaching at Strata STEM Guide is unlike anything else. They
+                            simplify complex Physics concepts effortlessly."</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Kamal Perera</span>
+                            <span class="reviewer-meta">Grade 12 Student</span>
+                        </div>
+                    </div>
+                    <!-- Review Card 2 -->
+                    <div class="card review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Best platform for Math Olympiad preparation. The logic-based approach
+                            really helped me excel."</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Nimali Silva</span>
+                            <span class="reviewer-meta">Olympiad Participant</span>
+                        </div>
+                    </div>
+                    <!-- Review Card 3 -->
+                    <div class="card review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"The resources provided for Grade 10 were exceptional. Highly recommend
+                            for any serious student."</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Arjun Raj</span>
+                            <span class="reviewer-meta">Grade 10 Student</span>
+                        </div>
+                    </div>
+                    <!-- Review Card 4 -->
+                    <div class="card review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Strata STEM Guide helped me reach my full potential. The community
+                            here is incredibly supportive."</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Sara Khan</span>
+                            <span class="reviewer-meta">AL Candidate</span>
+                        </div>
+                    </div>
+                    <!-- Duplicate for infinite loop -->
+                    <div class="card review-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"The teaching at Strata STEM Guide is unlike anything else. They
+                            simplify complex Physics concepts effortlessly."</p>
+                        <div class="reviewer-info">
+                            <span class="reviewer-name">Kamal Perera</span>
+                            <span class="reviewer-meta">Grade 12 Student</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <div class="section-title reveal" style="text-align: center;">
+                    <h2>Contact Us</h2>
+                </div>
+
+                <div class="card contact-form-container reveal" style="max-width: 480px; margin: 0 auto;">
+                    <form action="#" class="contact-form">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email</label>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Your Message</label>
+                            <textarea rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-btn shine-hover">
+                            <span>Send Message</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-left: 0.5rem;">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </section>
+    </main>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="Strata STEM Guide Logo" loading="lazy">
+                        <span>Strata STEM Guide</span>
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                    <p class="footer-tagline">built by students for students</p>
+                </div>
+                <div class="footer-socials">
+                    <h3>Connect With Us</h3>
+                    <a href="https://www.instagram.com/strata_stem_guide/" class="social-link" target="_blank" rel="noopener">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        @strata_stem_guide
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Floating AI Chat Button -->
+    <a href="https://ijsoguideai.pages.dev/" class="ai-chat-fab chatbot-link" aria-label="Chat with AI">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span class="fab-label">AI Chat</span>
+    </a>
+
+    <!-- In-Page Chatbot Drawer -->
+    <div id="chatbot-drawer" class="chatbot-drawer">
+        <div class="drawer-header">
+            <div class="drawer-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                AI Assistant
+            </div>
+            <button class="drawer-close" aria-label="Close Chat">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="drawer-body">
+            <iframe src="https://ijsoguideai.pages.dev/" frameborder="0" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <script src="main.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="account.css">
+</head>
+
+<body>
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'account', rootPath: './' };
+    </script>
+
+    <div class="top-nav-actions reveal">
+        <a href="index.html" class="back-home-pill">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Back to Home</span>
+        </a>
+    </div>
+
+    <main class="account-container">
+        <div class="profile-card reveal">
+            <div class="avatar-wrapper">
+                <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </div>
+
+            <h1 id="display-name" class="profile-name" style="cursor: pointer;" title="Edit Name">Student</h1>
+            <p id="display-email" class="profile-email">learning@stratastem.com</p>
+
+            <div class="profile-info-grid">
+                <div class="info-item reveal" style="cursor: pointer;" id="edit-age-trigger" title="Edit Age">
+                    <div class="info-label">Age</div>
+                    <div id="display-age" class="info-value">Not set</div>
+                </div>
+                <div class="info-item reveal" style="cursor: pointer;" id="edit-country-trigger" title="Edit Country">
+                    <div class="info-label">Country</div>
+                    <div id="display-country" class="info-value">Not set</div>
+                </div>
+            </div>
+
+            <div class="account-actions reveal">
+                <a href="index.html" class="profile-btn">Home</a>
+                <button id="edit-profile-btn" class="profile-btn">Edit Profile</button>
+                <button id="logout-btn" class="profile-btn logout-btn">Logout</button>
+            </div>
+        </div>
+
+
+        <a href="index.html" class="back-link reveal" style="margin-top: 3rem;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Home
+        </a>
+    </main>
+
+    <!-- Edit Profile Modal -->
+    <div id="edit-modal-overlay" class="profile-modal-overlay">
+        <div class="profile-modal">
+            <div class="modal-header">
+                <h2>Edit Profile</h2>
+                <p>Update your personal information below.</p>
+            </div>
+            <form id="edit-profile-form" class="modal-form">
+                <div class="modal-group">
+                    <label>Email Address (Locked)</label>
+                    <input type="email" id="edit-email" disabled style="opacity: 0.6; cursor: not-allowed;">
+                </div>
+                <div class="modal-group">
+                    <label for="edit-name">Full Name</label>
+                    <input type="text" id="edit-name" required>
+                </div>
+                <div class="modal-row">
+                    <div class="modal-group">
+                        <label for="edit-age">Age</label>
+                        <input type="number" id="edit-age" min="5" max="100" required>
+                    </div>
+                    <div class="modal-group">
+                        <label for="edit-country">Country</label>
+                        <select id="edit-country" required>
+                            <option value="Sri Lanka">Sri Lanka</option>
+                            <option value="India">India</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="Nepal">Nepal</option>
+                            <option value="Maldives">Maldives</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="United States">United States</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Singapore">Singapore</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <button type="button" id="cancel-edit" class="profile-btn" style="background: rgba(255,255,255,0.05);">Cancel</button>
+                    <button type="submit" class="modal-submit" style="margin-top: 0;">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+
+    <script type="module">
+        import { auth, db } from "./firebase-config.js";
+        import { signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        const displayName = document.getElementById('display-name');
+        const displayEmail = document.getElementById('display-email');
+        const displayAge = document.getElementById('display-age');
+        const displayCountry = document.getElementById('display-country');
+
+        // Load profile from Firestore
+        const loadProfile = async (uid, email) => {
+            try {
+                const docRef = doc(db, "users", uid);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const profile = docSnap.data();
+                    displayName.textContent = profile.name || 'Student';
+                    displayEmail.textContent = profile.email || email || 'No email';
+                    displayAge.textContent = profile.age || 'Not set';
+                    displayCountry.textContent = profile.country || 'Not set';
+                    
+                    // Update localStorage as a cache
+                    localStorage.setItem('userProfile', JSON.stringify(profile));
+                } else {
+                    console.log("No profile found in Firestore, checking localStorage...");
+                    const localData = localStorage.getItem('userProfile');
+                    if (localData) {
+                        const profile = JSON.parse(localData);
+                        displayName.textContent = profile.name || 'Student';
+                        displayEmail.textContent = email || 'No email';
+                    }
+                }
+            } catch (error) {
+                console.error("Error loading profile:", error);
+            }
+        };
+
+        // Check Auth State
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                loadProfile(user.uid, user.email);
+                
+                // Edit Profile Logic
+                const editBtn = document.getElementById('edit-profile-btn');
+                const editOverlay = document.getElementById('edit-modal-overlay');
+                const editForm = document.getElementById('edit-profile-form');
+                const cancelBtn = document.getElementById('cancel-edit');
+
+                const openEditModal = () => {
+                    const profileData = localStorage.getItem('userProfile');
+                    if (profileData) {
+                        const profile = JSON.parse(profileData);
+                        document.getElementById('edit-name').value = profile.name || '';
+                        document.getElementById('edit-age').value = profile.age || '';
+                        document.getElementById('edit-country').value = profile.country || '';
+                        document.getElementById('edit-email').value = user.email;
+                        editOverlay.classList.add('active');
+                    }
+                };
+
+                editBtn.onclick = openEditModal;
+                displayName.onclick = openEditModal;
+                document.getElementById('edit-age-trigger').onclick = openEditModal;
+                document.getElementById('edit-country-trigger').onclick = openEditModal;
+
+                cancelBtn.onclick = () => editOverlay.classList.remove('active');
+                
+                editForm.onsubmit = async (e) => {
+                    e.preventDefault();
+                    const updatedData = {
+                        name: document.getElementById('edit-name').value,
+                        age: document.getElementById('edit-age').value,
+                        country: document.getElementById('edit-country').value,
+                        email: user.email,
+                        updatedAt: new Date().toISOString()
+                    };
+
+                    try {
+                        const { setDoc, doc } = await import("https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js");
+                        await setDoc(doc(db, "users", user.uid), updatedData, { merge: true });
+                        localStorage.setItem('userProfile', JSON.stringify(updatedData));
+                        editOverlay.classList.remove('active');
+                        loadProfile(user.uid, user.email);
+                        
+                        // Update navbar name too
+                        if (window.initNavbar) {
+                            // The navbar might already have its own listener, 
+                            // but updating localStorage + loadProfile helps.
+                        }
+                    } catch (error) {
+                        console.error("Update error:", error);
+                        alert("Failed to update profile.");
+                    }
+                };
+
+            } else {
+                console.log("No user signed in");
+                window.location.href = "auth.html";
+            }
+        });
+
+        // Handle Logout
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+            try {
+                await signOut(auth);
+                localStorage.removeItem('userProfile'); 
+                window.location.href = "auth.html";
+            } catch (error) {
+                console.error("Logout error:", error);
+            }
+        });
+    </script>
+</body>
+
+</html>
+

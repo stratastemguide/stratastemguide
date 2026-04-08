@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade 1 to 13 | Strata STEM Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+
+    <!-- Social Media Meta Tags -->
+    <meta name="description" content="Strata STEM Guide Learning Portal — Video lessons and resources for Grade 6 to 13 science students.">
+    <meta property="og:title" content="Grade 6-13 Portal | Strata STEM Guide">
+    <meta property="og:description" content="Explore advanced science and math curriculum. Videos, notes, and interactive learning.">
+    <meta property="og:image" content="https://knowledgefrontier.github.io/logo.png">
+    <meta property="og:type" content="website">
+    <style>
+        .grades-container {
+            max-width: 1200px;
+            margin: 140px auto 60px;
+            padding: 0 5%;
+        }
+
+        .grades-hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .grades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .grade-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .grade-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+            border-color: var(--accent-lightblue);
+        }
+
+        .grade-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+            background: var(--text-gradient-main);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress"></div>
+
+    <!-- Backgrounds -->
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+    </div>
+    <div class="grid-overlay"></div>
+
+    <!-- Global Navbar logic -->
+    <script src="navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'grade-selection', rootPath: './' };
+    </script>
+
+    <main class="grades-container">
+        <div class="grades-hero reveal">
+            <h1>Grade <span class="gradient-text">6 to 13</span></h1>
+            <p>Tailored curriculum and resources for every stage of your scientific journey.</p>
+        </div>
+
+        <div class="grades-grid">
+            <!-- Simplified loop for demonstration -->
+            <a href="grade 6-13/Grade 6 Selection.html" class="grade-card reveal"><span
+                    class="grade-number">6</span>Grade 6</a>
+            <a href="grade 6-13/Grade 7 Selection.html" class="grade-card reveal"><span
+                    class="grade-number">7</span>Grade 7</a>
+            <a href="grade 6-13/Grade 8 Selection.html" class="grade-card reveal"><span
+                    class="grade-number">8</span>Grade 8</a>
+            <a href="grade 6-13/Grade 9 Selection.html" class="grade-card reveal"><span
+                    class="grade-number">9</span>Grade 9</a>
+            <a href="grade 6-13/Grade 10 Selection.html" class="grade-card reveal"><span
+                    class="grade-number">10</span>Grade 10</a>
+            <a href="grade 6-13/Grade 11 Selection.html" class="grade-card reveal"><span
+                    class="grade-number">11</span>Grade 11</a>
+            <a href="grade 6-13/Grade 12 Selection.html" class="grade-card reveal"><span
+                    class="grade-number">12</span>Grade 12</a>
+            <a href="grade 6-13/Grade 13 Selection.html" class="grade-card reveal"><span
+                    class="grade-number">13</span>Grade 13</a>
+        </div>
+    </main>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="Strata STEM Guide Logo">
+                        <span>Strata STEM Guide</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Strata STEM Guide. Inspiring scientific minds.</p>
+                <a href="#" class="scroll-top">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 15l-6-6-6 6"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
