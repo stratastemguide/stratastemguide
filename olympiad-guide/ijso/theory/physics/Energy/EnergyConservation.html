@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy Conservation | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../../../style.css">
+    <link rel="stylesheet" href="../../../../../navbar.css">
+    <link rel="stylesheet" href="../../ijso.css">
+
+    <!-- KaTeX for Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });"></script>
+</head>
+
+<body class="physics-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../../../' };
+    </script>
+    <main class="theory-container" style="max-width: 1100px;">
+        <div class="theory-hero reveal" style="text-align: left; margin-bottom: 0.5rem;">
+            <br><br>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); display: block; padding-bottom: 1rem;">Conservation of Energy</h1>
+            
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                <a href="../../Physics.html" class="back-theory-btn" style="margin-top: 0; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Physics
+                </a>
+                <a href="../../Physics.html" class="back-to-path-btn" style="display: none; margin-top: 0;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Path
+                </a>
+            </div>
+
+            <script>
+                // Context-aware navigation
+                if (window.location.search.includes('mode=level')) {
+                    const backBtn = document.querySelector('.back-theory-btn');
+                    const backPathBtn = document.querySelector('.back-to-path-btn');
+                    if (backBtn) backBtn.style.display = 'none';
+                    if (backPathBtn) backPathBtn.style.display = 'inline-flex';
+                }
+            </script>
+        </div>
+
+        <div class="content-card reveal">
+            <!-- Core Concept -->
+            <section class="notes-section">
+                <h2>The Core Concept: Energy is a Shape-Shifter</h2>
+                <p>Energy cannot be created from nothing, and it cannot be deleted from existence. The <strong>Law of Conservation of Energy</strong> states that the total energy of an isolated system remains constant. It simply changes form—moving from a "stored" state to an "active" state.</p>
+                
+                <div class="callout-box" style="background: rgba(34, 197, 94, 0.05); border: 1px solid rgba(34, 197, 94, 0.2);">
+                    <h3 style="color: #22c55e;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> The Bank Account Analogy</h3>
+                    <p>Think of it like a bank account: you can move money from savings to checking, or withdraw it as cash (change forms), but the total amount of wealth remains the same unless you deposit or spend it outside the system.</p>
+                </div>
+            </section>
+
+            <hr style="opacity: 0.1; margin: 2.5rem 0;">
+
+            <!-- The Primary Players -->
+            <section class="notes-section">
+                <h2>The Primary Players</h2>
+                <p>Before we look at the conservation itself, we need to define the two most common forms of mechanical energy you'll encounter in an isolated system.</p>
+                
+                <div class="responsive-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;">
+                    <!-- GPE -->
+                    <div style="background: rgba(59, 130, 246, 0.05); border: 1px solid rgba(59, 130, 246, 0.2); padding: 2rem; border-radius: 20px;">
+                        <h3 style="color: #3b82f6; margin-top: 0;">1. Gravitational Potential Energy ($U_g$)</h3>
+                        <p>This is energy stored due to an object's position in a gravitational field. If it has the "potential" to fall, it has GPE.</p>
+                        <p style="font-size: 1.8rem; text-align: center; margin: 1.5rem 0;" class="math-highlight">
+                            $U_g = mgh$
+                        </p>
+                        <ul style="font-size: 0.95rem; opacity: 0.8;">
+                            <li><strong>m:</strong> mass (kg)</li>
+                            <li><strong>g:</strong> gravitational acceleration ($\approx 9.8 \text{ m s}^{-2}$)</li>
+                            <li><strong>h:</strong> height above a reference point (m)</li>
+                        </ul>
+                    </div>
+
+                    <!-- KE -->
+                    <div style="background: rgba(168, 85, 247, 0.05); border: 1px solid rgba(168, 85, 247, 0.2); padding: 2rem; border-radius: 20px;">
+                        <h3 style="color: #a855f7; margin-top: 0;">2. Kinetic Energy ($K$)</h3>
+                        <p>This is the energy of motion. If it’s moving, it has Kinetic Energy ($K$).</p>
+                        <p style="font-size: 1.8rem; text-align: center; margin: 1.5rem 0;" class="math-highlight">
+                            $K = \frac{1}{2}mv^2$
+                        </p>
+                        <ul style="font-size: 0.95rem; opacity: 0.8;">
+                            <li><strong>m:</strong> mass (kg)</li>
+                            <li><strong>v:</strong> velocity (m/s)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Master Equation -->
+            <section class="notes-section" style="margin-top: 3rem;">
+                <h2>The Master Equation</h2>
+                <p>In a "perfect" system (ignoring friction or air resistance), the sum of potential and kinetic energy at the start must equal the sum at the end. We call this <strong>Mechanical Energy</strong> ($E_{mech}$), the sum of both kinetic and potential energy.</p>
+                <p style="font-size: 2.2rem; text-align: center; padding: 2rem; background: rgba(255, 255, 255, 0.03); border-radius: 24px; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.1);">
+                    $U_{initial} + K_{initial} = U_{final} + K_{final}$
+                </p>
+            </section>
+
+            <hr style="opacity: 0.1; margin: 3rem 0;">
+
+            <!-- Sample Problem -->
+            <section class="notes-section">
+                <h2 style="color: #ffd700;">Sample Problem: The Cliff Diver</h2>
+                <div style="background: rgba(255, 215, 0, 0.03); border: 1px solid rgba(255, 215, 0, 0.1); padding: 2rem; border-radius: 24px;">
+                    <p><strong>Scenario:</strong> A diver with a mass of <strong>70 kg</strong> stands motionless on a cliff that is <strong>20 m</strong> above the water surface. He jumps off the cliff. Determine his velocity just before he reaches the water. (Assume $g = 10 \text{ m s}^{-2}$, and neglect air resistance.)</p>
+                    
+                    <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div>
+                            <h4 style="color: #fff; margin-bottom: 0.5rem;">Step 1: Initial State (Top of the Cliff)</h4>
+                            <p>Height ($h$): $20 \text{ m}$, Velocity ($v$): $0 \text{ m s}^{-1}$</p>
+                            <p>$U_i = mgh = 70 \times 10 \times 20 = \mathbf{14,000 \text{ J}}$</p>
+                            <p>$K_i = \frac{1}{2}mv^2 = \frac{1}{2} \times 70 \times 0^2 = \mathbf{0 \text{ J}}$</p>
+                            <p>Total initial mechanical energy: $E_i = 14,000 \text{ J}$</p>
+                        </div>
+
+                        <div>
+                            <h4 style="color: #fff; margin-bottom: 0.5rem;">Step 2: Final State (Just Above the Water)</h4>
+                            <p>Height ($h$): $0 \text{ m}$, Velocity ($v$): Unknown</p>
+                            <p>$U_f = 0 \text{ J}$ (Height is zero)</p>
+                            <p>$K_f = \frac{1}{2}mv^2 = \frac{1}{2} \times 70 \times v^2 = \mathbf{35v^2 \text{ J}}$</p>
+                        </div>
+
+                        <div>
+                            <h4 style="color: #fff; margin-bottom: 0.5rem;">Step 3: Apply Conservation of Mechanical Energy</h4>
+                            <p>$E_i = E_f$</p>
+                            <p>$14,000 = 35v^2$</p>
+                        </div>
+
+                        <div style="background: rgba(34, 197, 94, 0.1); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(34, 197, 94, 0.3);">
+                            <h4 style="color: #22c55e; margin-bottom: 0.5rem;">Step 4: Solve for Velocity</h4>
+                            <p>$v^2 = \frac{14,000}{35} = 400$</p>
+                            <p>$v = \sqrt{400} = \mathbf{20 \text{ m s}^{-1}}$</p>
+                            <p style="margin-top: 1rem; font-weight: 700; font-size: 1.1rem; color: #22c55e;">Final Answer: $20 \text{ m s}^{-1}$</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Completion Section -->
+            <div class="completion-section reveal" style="margin-top: 3rem; text-align: center; padding: 2rem; background: rgba(255, 215, 0, 0.05); border-radius: 20px; border: 1px dashed rgba(255, 215, 0, 0.3);">
+                <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem;">Finished studying this topic?</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8;">Mark it as completed to track your mastery of Energy!</p>
+                <button id="completeBtn" class="complete-topic-btn">
+                    <span class="btn-text">Mark as Completed</span>
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+                <p id="statusMsg" style="margin-top: 1rem; font-size: 0.9rem; font-weight: 500; display: none;"></p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .complete-topic-btn {
+            background: linear-gradient(135deg, #ffd700, #ffae00);
+            color: #000;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .complete-topic-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 15px rgba(255, 215, 0, 0.5);
+        }
+
+        .complete-topic-btn.is-completed {
+            background: #22c55e;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            cursor: default;
+        }
+
+        .complete-topic-btn.is-completed .check-icon {
+            display: block;
+        }
+
+        .complete-topic-btn.is-completed:hover {
+            transform: none;
+        }
+
+        .complete-topic-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .responsive-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .theory-hero h1 {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../../../main.js"></script>
+
+    <script type="module">
+        import { auth, db } from '../../../../../firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc, setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        const completeBtn = document.getElementById('completeBtn');
+        const statusMsg = document.getElementById('statusMsg');
+        const topicId = 'energy-conservation'; 
+        let currentUser = null;
+
+        // Initialize State
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                currentUser = user;
+                // Check if already completed
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists() && docSnap.data().completedTopics?.includes(topicId)) {
+                    markUIAsCompleted();
+                }
+            } else {
+                currentUser = null;
+                completeBtn.querySelector('.btn-text').innerText = 'Log in to Track Progress';
+                completeBtn.style.opacity = '0.5';
+                completeBtn.style.cursor = 'not-allowed';
+            }
+        });
+
+        function markUIAsCompleted() {
+            completeBtn.classList.add('is-completed');
+            completeBtn.querySelector('.btn-text').innerText = 'Topic Completed ✨';
+            statusMsg.innerText = "Awesome! You've mastered Energy Conservation.";
+            statusMsg.style.display = 'block';
+            statusMsg.style.color = '#22c55e';
+            completeBtn.disabled = true;
+        }
+
+        completeBtn.addEventListener('click', async () => {
+            if (!currentUser) {
+                alert("Please log in to save your progress!");
+                return;
+            }
+            if (completeBtn.classList.contains('is-completed')) return;
+
+            completeBtn.classList.add('loading');
+            completeBtn.querySelector('.btn-text').innerText = 'Saving Progress...';
+
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                await setDoc(docRef, {
+                    completedTopics: arrayUnion(topicId)
+                }, { merge: true });
+
+                markUIAsCompleted();
+            } catch (error) {
+                console.error("Error saving progress:", error);
+                statusMsg.innerText = "Error saving progress.";
+                statusMsg.style.display = 'block';
+            } finally {
+                completeBtn.classList.remove('loading');
+            }
+        });
+    </script>
+</body>
+
+</html>
+

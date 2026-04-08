@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Non-Mendelian Inheritance | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../../../style.css">
+    <link rel="stylesheet" href="../../../../../navbar.css">
+    <link rel="stylesheet" href="../../ijso.css">
+
+    <!-- KaTeX for Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });"></script>
+</head>
+
+<body class="biology-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../../../' };
+    </script>
+    <main class="theory-container" style="max-width: 1100px;">
+        <div class="theory-hero reveal" style="text-align: left; margin-bottom: 0.5rem;">
+            <br><br>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); display: block; padding-bottom: 1rem;">Non-Mendelian Inheritance</h1>
+            
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                <a href="../Genetics.html" class="back-theory-btn" style="margin-top: 0; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Genetics
+                </a>
+                <a href="../../Biology.html" class="back-to-path-btn" style="display: none; margin-top: 0;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Path
+                </a>
+            </div>
+
+            <script>
+                // Context-aware navigation
+                if (window.location.search.includes('mode=level')) {
+                    const backGeneticsBtn = document.querySelector('.back-theory-btn');
+                    const backPathBtn = document.querySelector('.back-to-path-btn');
+                    if (backGeneticsBtn) backGeneticsBtn.style.display = 'none';
+                    if (backPathBtn) backPathBtn.style.display = 'inline-flex';
+                }
+            </script>
+        </div>
+
+        <div class="content-card reveal">
+            <!-- Introduction -->
+            <section class="notes-section">
+                <p>In previous chapters, you learned how Gregor Mendel proposed his theory of inheritance, built upon three laws: the Law of Dominance, the Law of Segregation, and the Law of Independent Assortment.</p>
+                <p><strong>Non-Mendelian inheritance</strong> refers to patterns of inheritance that do not follow Mendel’s rules, particularly the simple dominant-recessive relationship. These patterns reveal the complex ways genes interact to determine phenotypes.</p>
+            </section>
+
+            <!-- 1. Incomplete Dominance -->
+            <section class="notes-section">
+                <h2>1. Incomplete Dominance</h2>
+                <p>In incomplete dominance, the heterozygous genotype results in a <strong>mixed phenotype</strong> that is a blend of the two homozygous phenotypes. Neither allele is fully dominant.</p>
+                
+                <div style="background: rgba(34, 197, 94, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(34, 197, 94, 0.2); margin-top: 1rem;">
+                    <p><strong>Example: Flower Color</strong></p>
+                    <ul>
+                        <li>Homozygous Dominant (RR): <strong>Red</strong></li>
+                        <li>Homozygous Recessive (rr): <strong>White</strong></li>
+                        <li>Heterozygous (Rr): <strong>Pink</strong> (A blend of red and white)</li>
+                    </ul>
+                </div>
+                <!-- Placeholder for PIC 1 -->
+                <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 16px; border: 1px dashed rgba(255, 255, 255, 0.1); text-align: center; margin-top: 1.5rem;">
+                    <p style="opacity: 0.6; font-style: italic;">[Image: Incomplete Dominance - Red x White = Pink Flowers]</p>
+                </div>
+            </section>
+
+            <!-- 2. Codominance -->
+            <section class="notes-section">
+                <h2>2. Codominance</h2>
+                <p>Codominance occurs when both alleles of a gene are <strong>fully and simultaneously expressed</strong> in a heterozygous individual. Instead of blending, both traits appear clearly.</p>
+                
+                <div style="background: rgba(59, 130, 246, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.2); margin-top: 1rem;">
+                    <p><strong>Example: Speckled Chickens</strong></p>
+                    <ul>
+                        <li>Black Feathers ($C^B C^B$) x White Feathers ($C^W C^W$)</li>
+                        <li>Heterozygous Result ($C^B C^W$): <strong>Black and White Speckled</strong> feathers (Both colors are expressed).</li>
+                    </ul>
+                </div>
+                <!-- Placeholder for PIC 2 -->
+                <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 16px; border: 1px dashed rgba(255, 255, 255, 0.1); text-align: center; margin-top: 1.5rem;">
+                    <p style="opacity: 0.6; font-style: italic;">[Image: Codominance - Black and White speckled chicken]</p>
+                </div>
+            </section>
+
+            <!-- 3. Multiple Alleles (Polyallelism) -->
+            <section class="notes-section">
+                <h2>3. Multiple Alleles</h2>
+                <p>Sometimes a single gene has more than two alternative alleles in a population. This is known as <strong>Polyallelism</strong>. While the population has multiple alleles, an individual can still only carry two (one from each parent).</p>
+                
+                <div style="background: rgba(168, 85, 247, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(168, 85, 247, 0.2); margin-top: 1rem;">
+                    <p><strong>Example: Human Blood Groups</strong></p>
+                    <p>Controlled by three alleles: $I^A$, $I^B$, and $i$. $I^A$ and $I^B$ are codominant, while both are dominant over $i$.</p>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; border: 1px solid rgba(255,255,255,0.1);">
+                        <thead>
+                            <tr style="background: rgba(255,255,255,0.05);">
+                                <th style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.1);">Genotype</th>
+                                <th style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.1);">Blood Group</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.1);">$I^A I^A$ or $I^A i$</td><td style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.1);">A</td></tr>
+                            <tr><td style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.1);">$I^B I^B$ or $I^B i$</td><td style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.1);">B</td></tr>
+                            <tr><td style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.1);">$I^A I^B$</td><td style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.1);">AB</td></tr>
+                            <tr><td style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.1);">$ii$</td><td style="padding: 0.8rem; border: 1px solid rgba(255,255,255,0.1);">O</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 4. Polygenic Inheritance -->
+            <section class="notes-section">
+                <h2>4. Polygenic Inheritance</h2>
+                <p>A trait is controlled by <strong>two or more genes</strong>, often on different chromosomes. These traits show continuous variation rather than discrete categories.</p>
+                <ul>
+                    <li><strong>Continuous Variation:</strong> Traits like height, skin color, and weight.</li>
+                    <li><strong>Quantitative Inheritance:</strong> The effect of each gene is additive.</li>
+                </ul>
+            </section>
+
+            <!-- 5. Epistasis -->
+            <section class="notes-section">
+                <h2>5. Epistasis</h2>
+                <p>Epistasis occurs when <strong>one gene masks or modifies the effect of another gene</strong>. This deviates from Mendel's simple ratios.</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+                    <div style="background: rgba(239, 68, 68, 0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
+                        <h3 style="margin-top: 0; font-size: 1.2rem;">Recessive Epistasis</h3>
+                        <p>Homozygous recessive alleles of the "epistatic" gene mask the other gene (e.g., Albinism masking coat color).</p>
+                    </div>
+                    <div style="background: rgba(59, 130, 246, 0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.2);">
+                        <h3 style="margin-top: 0; font-size: 1.2rem;">Dominant Epistasis</h3>
+                        <p>A single dominant allele of the epistatic gene masks the expression of another gene.</p>
+                    </div>
+                </div>
+                <!-- Placeholder for PIC 3 & 4 -->
+                <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 16px; border: 1px dashed rgba(255, 255, 255, 0.1); text-align: center; margin-top: 1.5rem;">
+                    <p style="opacity: 0.6; font-style: italic;">[Images: Epistasis examples in fruit color and animal coats]</p>
+                </div>
+            </section>
+
+            <!-- 6. Pleiotropy -->
+            <section class="notes-section">
+                <h2>6. Pleiotropy</h2>
+                <p>Pleiotropy is when <strong>a single gene influences multiple, seemingly unrelated traits</strong>. This is common in genetic disorders where one mutation affects multiple organ systems.</p>
+                <ul>
+                    <li><strong>Sickle Cell Anemia:</strong> One gene mutation affects blood cell shape, organ health, and pain levels.</li>
+                    <li><strong>Marfan Syndrome:</strong> Affects stature, limbs, cardiovascular health, and vision.</li>
+                </ul>
+            </section>
+
+            <!-- 7. Sex-Linked Inheritance -->
+            <section class="notes-section">
+                <h2>7. Sex-Linked Inheritance</h2>
+                <p>Traits controlled by genes located on the <strong>sex chromosomes (X or Y)</strong>. Because males (XY) and females (XX) have different combinations, the inheritance patterns differ.</p>
+                <div style="background: rgba(245, 158, 11, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(245, 158, 11, 0.2); margin-top: 1rem;">
+                    <p><strong>Example: Hemophilia</strong></p>
+                    <p>Located on the X chromosome. Males are more likely to be affected because they only have one X chromosome—one recessive allele is enough to cause the disorder.</p>
+                </div>
+                <!-- Placeholder for PIC 5 -->
+                <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 16px; border: 1px dashed rgba(255, 255, 255, 0.1); text-align: center; margin-top: 1.5rem;">
+                    <p style="opacity: 0.6; font-style: italic;">[Image: Punnett square for sex-linked hemophilia]</p>
+                </div>
+            </section>
+
+            <!-- 8. Mitochondrial Inheritance -->
+            <section class="notes-section">
+                <h2>8. Mitochondrial Inheritance</h2>
+                <p>Mitochondria contain their own circular DNA. Because the egg provides almost all the cytoplasm and organelles to the zygote, <strong>mitochondria are inherited exclusively from the mother</strong>.</p>
+                <ul>
+                    <li>If a mother has a mitochondrial mutation, all her children will inherit it.</li>
+                    <li>If a father has a mutation, none of his children will inherit it.</li>
+                </ul>
+            </section>
+
+            <!-- Completion Section -->
+            <div class="completion-section reveal" style="margin-top: 3rem; text-align: center; padding: 2rem; background: rgba(255, 215, 0, 0.05); border-radius: 20px; border: 1px dashed rgba(255, 215, 0, 0.3);">
+                <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem;">Finished studying this topic?</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8;">Mark it as completed to track your mastery of Genetics!</p>
+                <button id="completeBtn" class="complete-topic-btn">
+                    <span class="btn-text">Mark as Completed</span>
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+                <p id="statusMsg" style="margin-top: 1rem; font-size: 0.9rem; font-weight: 500; display: none;"></p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .complete-topic-btn {
+            background: linear-gradient(135deg, #ffd700, #ffae00);
+            color: #000;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .complete-topic-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .complete-topic-btn.is-completed {
+            background: #22c55e;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            cursor: default;
+        }
+
+        .complete-topic-btn.is-completed .check-icon {
+            display: block;
+        }
+
+        .complete-topic-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .theory-hero h1 { font-size: 2.2rem !important; }
+        }
+    </style>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../../../main.js"></script>
+
+    <script type="module">
+        import { auth, db } from '../../../../../firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc, setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        const completeBtn = document.getElementById('completeBtn');
+        const statusMsg = document.getElementById('statusMsg');
+        const topicId = 'non_mendelian_inheritance'; 
+        let currentUser = null;
+
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                currentUser = user;
+                try {
+                    const docRef = doc(db, "userProgress", user.uid);
+                    const docSnap = await getDoc(docRef);
+                    if (docSnap.exists() && docSnap.data().completedTopics?.includes(topicId)) {
+                        markUIAsCompleted();
+                    }
+                } catch (e) { console.error(e); }
+            } else {
+                completeBtn.querySelector('.btn-text').innerText = 'Log in to Track Progress';
+                completeBtn.style.opacity = '0.5';
+                completeBtn.style.cursor = 'not-allowed';
+            }
+        });
+
+        function markUIAsCompleted() {
+            completeBtn.classList.add('is-completed');
+            completeBtn.querySelector('.btn-text').innerText = 'Topic Completed ✨';
+            statusMsg.innerText = "Awesome! You've mastered Non-Mendelian Inheritance.";
+            statusMsg.style.display = 'block';
+            statusMsg.style.color = '#22c55e';
+            completeBtn.disabled = true;
+        }
+
+        completeBtn.addEventListener('click', async () => {
+            if (!currentUser) return;
+            if (completeBtn.classList.contains('is-completed')) return;
+            completeBtn.classList.add('loading');
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                await setDoc(docRef, { completedTopics: arrayUnion(topicId) }, { merge: true });
+                markUIAsCompleted();
+            } catch (error) {
+                console.error(error);
+                statusMsg.innerText = "Error saving progress.";
+                statusMsg.style.display = 'block';
+            } finally {
+                completeBtn.classList.remove('loading');
+            }
+        });
+    </script>
+</body>
+
+</html>
+

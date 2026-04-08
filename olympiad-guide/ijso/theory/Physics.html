@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../navbar.css">
+    <link rel="stylesheet" href="ijso.css">
+    <link rel="stylesheet" href="level-path.css">
+</head>
+
+<body class="physics-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../' };
+    </script>
+    <br><br>
+    <main class="theory-container">
+        <div class="theory-hero reveal">
+            <h1>Physics</h1>
+            <p>Explore fundamental principles governing the universe through mechanics, waves, light, thermodynamics, electricity, modern physics, and astrophysics.</p>
+            <a href="../Theory.html" class="back-theory-btn reveal">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Theory
+            </a>
+
+            <div class="mode-toggle-wrapper reveal">
+                <button class="mode-toggle-btn active" id="gridModeBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Grid View
+                </button>
+                <button class="mode-toggle-btn" id="levelModeBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    Level Mode
+                </button>
+            </div>
+        </div>
+
+        <div class="theory-grid" id="theoryGrid">
+            <!-- Category Cards (Grid View Only) -->
+            <div class="theory-card card-physics reveal grid-only">
+                <div class="card-image" style="background-image: url('physics/Assets_img/Units.png');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Units and Dimensions</h3>
+                        <p>Foundations of measurement, conversions, and dimensional reasoning.</p>
+                    </div>
+                    <a href="physics/UnitsAndDimensions.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal grid-only">
+                <div class="card-image" style="background-image: url('physics/Assets_img/electricty.png');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Electricity</h3>
+                        <p>Master the laws of electric charge, fields, and circuits.</p>
+                    </div>
+                    <a href="physics/Electricity.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal grid-only">
+                <div class="card-image" style="background-image: url('physics/Assets_img/mechnics.png');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Mechanics</h3>
+                        <p>Explore this section to learn more.</p>
+                    </div>
+                    <a href="physics/Mechanics.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal grid-only">
+                <div class="card-image" style="background-image: url('physics/Assets_img/motion.png');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Motion</h3>
+                        <p>The energy and principles of movement.</p>
+                    </div>
+                    <a href="physics/Motion.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Generated grid items from Measurement to Fields II -->
+            <div class="theory-card card-physics reveal grid-only">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1542350327-4a328647dd9d?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Thermodynamics</h3>
+                        <p>Explore the laws of heat, work, and energy transfer from microscopic to macroscopic levels.</p>
+                    </div>
+                    <a href="physics/Thermodynamics.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal grid-only">
+                <div class="card-image" style="background-image: url('physics/Assets_img/measurement.png');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Measurement</h3>
+                        <p>Fundamentals of physical measurement.</p>
+                    </div>
+                    <span class="card-btn magnetic" style="cursor: default; opacity: 0.6;">Coming Soon</span>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal grid-only">
+                <div class="card-image" style="background-image: url('physics/Assets_img/Enegry.jpeg');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Energy I</h3>
+                        <p>Forms of energy, mechanical work, and the principles of entropy.</p>
+                    </div>
+                    <a href="physics/Energy/FormsOfEnergy.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+
+
+            <div class="theory-card card-physics reveal grid-only">
+                <div class="card-image" style="background-image: url('physics/Assets_img/magnets.png');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Magnets</h3>
+                        <p>Explore this section to learn more.</p>
+                    </div>
+                    <span class="card-btn magnetic" style="cursor: default; opacity: 0.6;">Coming Soon</span>
+                </div>
+            </div>
+
+
+
+            <div class="theory-card card-physics reveal grid-only">
+                <div class="card-image" style="background-image: url('physics/Assets_img/physicalquantities.jpeg');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Physical quantities of matter</h3>
+                        <p>Explore this section to learn more.</p>
+                    </div>
+                    <span class="card-btn magnetic" style="cursor: default; opacity: 0.6;">Coming Soon</span>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal grid-only">
+                <div class="card-image" style="background-image: url('physics/Assets_img/waves.png');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Waves and its properties</h3>
+                        <p>Explore this section to learn more.</p>
+                    </div>
+                    <span class="card-btn magnetic" style="cursor: default; opacity: 0.6;">Coming Soon</span>
+                </div>
+            </div>
+
+
+
+            <!-- Level Mode Data Cards (Hidden in Grid View) -->
+            <!-- Topic 1 -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="basics">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1635010139366-421cb20d2df2?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Basics of Physical Quantities</h3>
+                        <p>Fundamental concepts of scalars, vectors, and physical measurements.</p>
+                    </div>
+                    <a href="physics/Units/BasicsOfPhysicalQuantities.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Topic 2 -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="units">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Units</h3>
+                        <p>SI units, base vs derived units, and system of measurements.</p>
+                    </div>
+                    <a href="physics/Units/Units.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Topic 3 -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="dimensions">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Dimensions and Analysis</h3>
+                        <p>Dimensional formulas and their applications in derivation and verification.</p>
+                    </div>
+                    <a href="physics/Units/UnitsAndDimensions.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+
+            <!-- Topic 4 -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="accuracy">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1518152006812-edab29b069ac?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Accuracy and Experimental Errors</h3>
+                        <p>Precision, experimental uncertainties, and error propagation.</p>
+                    </div>
+                    <a href="physics/Units/AccuracyPrecisionErrors.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Electricity Tiers -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="static_electricity">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Static Electricity</h3>
+                        <p>Imbalance of electric charges within or on the surface of a material.</p>
+                    </div>
+                    <a href="physics/Electromagnetism/StaticElectricity.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="static_phenomena">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Phenomena of Static Electricity</h3>
+                        <p>Electrostatic induction, polarization, and attraction.</p>
+                    </div>
+                    <a href="physics/Electromagnetism/StaticPhenomena.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="current-electricity">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1501862700950-18382cd41497?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Current Electricity</h3>
+                        <p>Flow of electric charge and basic principles of current.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="circuits">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1534330207526-8e81f10ec6fe?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Circuits & Resistance</h3>
+                        <p>Ohm's law, series, and parallel circuit components.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Mechanics Tiers -->
+            <!-- Vectors -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="vectors">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Vectors</h3>
+                        <p>Scalar vs Vector quantities, addition, and resolution.</p>
+                    </div>
+                    <a href="physics/Mechanics/ScalarsAndVectors.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Kinematics -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="kinematics">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1461817459336-3405ceb72bc2?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Kinematic Formulas</h3>
+                        <p>SUVAT equations and motion in one dimension.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="motion-graphs">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Motion Graphs</h3>
+                        <p>Position-time, velocity-time, and acceleration-time graphs.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Dynamics -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="newton-laws">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1517420704952-d9f39e946fdf?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Newton's Laws</h3>
+                        <p>Laws of motion and the concept of inertia.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="forces-friction">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Forces and Friction</h3>
+                        <p>Contact forces, drag, and static/kinetic friction.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Circular Motion -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="circular-motion">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1451188507663-3807426189b8?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Circular Motion</h3>
+                        <p>Angular displacement, velocity, and periodic motion.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="centripetal-force">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1502481851512-e9e2529bbbf9?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Centripetal Force</h3>
+                        <p>Dynamics of circular paths and banking of roads.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Statics -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="torque">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Torque & Equilibrium</h3>
+                        <p>Moments of force, center of gravity, and stability.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="center-of-mass">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Center of Mass</h3>
+                        <p>Distribution of mass and motion of systems.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Elasticity -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="hookes-law">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Hooke's Law</h3>
+                        <p>Elasticity, stress, strain, and spring constants.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="harmonic-motion">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Harmonic Motion</h3>
+                        <p>Simple Harmonic Motion and angular frequency.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Energy -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="energy-conservation">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1534330207526-8e81f10ec6fe?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Energy Conservation</h3>
+                        <p>Nature of energy and the law of conservation.</p>
+                    </div>
+                    <a href="physics/Energy/EnergyConservation.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="forms-sources">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Forms & Sources</h3>
+                        <p>Chemical, nuclear, and renewable energy sources.</p>
+                    </div>
+                    <a href="physics/Energy/FormsOfEnergy.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="mechanical-energy">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1501166073351-be7482709e83?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Mechanical Energy & Work</h3>
+                        <p>Kinetic energy, potential energy, and work-energy theorem.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="power-efficiency">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4628c7160?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Power & Efficiency</h3>
+                        <p>Rate of work done and energy efficiency ratios.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Momentum -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="momentum">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1460186136353-977e9d6085a1?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Momentum & Conservation</h3>
+                        <p>Impulse, linear momentum, and conservation laws.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="collisions">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Collisions</h3>
+                        <p>Elastic and inelastic collisions in one and two dimensions.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Gravity -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="gravity-weight">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Gravity & Weight</h3>
+                        <p>Universal gravitation and the concept of mass vs weight.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="gravitational-potential">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Acceleration & Potential</h3>
+                        <p>Free fall, 'g', and gravitational potential energy.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="orbital-motion">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1454789548928-9efd52dc4031?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Orbital Motion</h3>
+                        <p>Satellites, Kepler's laws, and escape velocity.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Fluids -->
+            <div class="theory-card card-physics reveal level-only" data-topic-id="pressure">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1502481851512-e9e2529bbbf9?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Pressure & Pascal's Law</h3>
+                        <p>Atmospheric, hydrostatic pressure, and hydraulic systems.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="buoyancy">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1540304453527-362098670f5e?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Buoyance & Archimedes</h3>
+                        <p>Upthrust, principle of flotation, and density.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="bernoulli">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Bernoulli's Principle</h3>
+                        <p>Fluid dynamics, lift, and Venturi effect.</p>
+                    </div>
+                    <a href="#" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="heat_temperature">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1542350327-4a328647dd9d?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Heat & Temperature</h3>
+                        <p>Kinetic theory of gases, thermal expansion, and heat transfer.</p>
+                    </div>
+                    <a href="physics/Thermodynamics/HeatTemperature.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <div class="theory-card card-physics reveal level-only" data-topic-id="heat_transfer_methods">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Methods of Heat Transfer</h3>
+                        <p>Conduction, Convection, and Radiation: The mechanics of energy flow.</p>
+                    </div>
+                    <a href="physics/Thermodynamics/MethodsOfHeatTransfer.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level Path View -->
+        <div class="level-path-container" id="levelPathContainer" style="display: none;">
+            <svg class="path-svg" id="pathSvg">
+                <path class="path-line" id="pathLine"></path>
+                <path class="path-line progress-line" id="progressLine"></path>
+            </svg>
+            <!-- Nodes will be injected here by JS -->
+        </div>
+    </main>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../main.js"></script>
+
+    <script type="module">
+        import { auth, db } from '../../../firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        // Constants & State
+        const theoryGrid = document.getElementById('theoryGrid');
+        const levelPathContainer = document.getElementById('levelPathContainer');
+        const gridModeBtn = document.getElementById('gridModeBtn');
+        const levelModeBtn = document.getElementById('levelModeBtn');
+        
+        let userProgress = [];
+        let currentUser = null;
+
+        // 1. Auth & Initial Load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedMode = localStorage.getItem('physicsMode') || 'grid';
+            setMode(savedMode);
+            
+            onAuthStateChanged(auth, async (user) => {
+                if (user) {
+                    currentUser = user;
+                    await loadUserProgress();
+                } else {
+                    currentUser = null;
+                    userProgress = [];
+                    generateLevelNodes();
+                    updateGridView();
+                }
+            });
+
+            // Grid View Listeners - just navigate, don't auto-complete
+            // Topics are marked complete only via the 'Mark as Completed' button inside each lesson page.
+
+            // Mode Toggle Listeners
+            if (gridModeBtn) gridModeBtn.addEventListener('click', () => setMode('grid'));
+            if (levelModeBtn) levelModeBtn.addEventListener('click', () => setMode('level'));
+        });
+
+        async function loadUserProgress() {
+            if (!currentUser) return;
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    userProgress = docSnap.data().completedTopics || [];
+                    console.log("Loaded progress:", userProgress);
+                }
+                generateLevelNodes();
+                updateGridView();
+            } catch (error) {
+                console.error("Error loading progress:", error);
+            }
+        }
+
+        async function markTopicCompleted(topicId) {
+            if (!currentUser) {
+                console.warn("Progress not saved: User not logged in.");
+                return;
+            }
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                await setDoc(docRef, {
+                    completedTopics: arrayUnion(topicId)
+                }, { merge: true });
+                
+                console.log("Saved Topic:", topicId);
+                if (!userProgress.includes(topicId)) {
+                    userProgress.push(topicId);
+                    generateLevelNodes();
+                    updateGridView();
+                }
+            } catch (error) {
+                console.error("Error marking topic completed:", error);
+            }
+        }
+
+        // 2. UI Generation
+        function generateLevelNodes() {
+            const cards = theoryGrid.querySelectorAll('.theory-card[data-topic-id]');
+            const existingElements = levelPathContainer.querySelectorAll('.level-node, .tier-header');
+            existingElements.forEach(el => el.remove());
+
+            let currentTier = 0;
+            const tierSize = 4;
+            
+            // Find the "Active" node (first uncompleted)
+            let activeIndex = -1;
+            cards.forEach((card, index) => {
+                const topicId = card.dataset.topicId;
+                if (!userProgress.includes(topicId) && activeIndex === -1) {
+                    activeIndex = index;
+                }
+            });
+
+            cards.forEach((card, index) => {
+                const title = card.querySelector('h3').innerText;
+                const desc = card.querySelector('p').innerText;
+                const link = card.querySelector('a.card-btn').getAttribute('href');
+                const topicId = card.dataset.topicId;
+                
+                if (index % tierSize === 0) {
+                    currentTier++;
+                    const header = document.createElement('div');
+                    header.className = 'tier-header';
+                    const tierNames = ['Units & Dimensions', 'Electricity I', 'Mechanics I', 'Mechanics II', 'Mechanics III', 'Mechanics IV', 'Mechanics V'];
+                    header.innerHTML = `<h2>${tierNames[currentTier-1] || 'Advanced Mechanics'}</h2>`;
+                    levelPathContainer.appendChild(header);
+                }
+
+                const node = document.createElement('a');
+                const levelModeLink = link.includes('?') ? `${link}&mode=level` : `${link}?mode=level`;
+                node.href = levelModeLink;
+                node.className = 'level-node';
+                
+                // Status Logic
+                const isCompleted = userProgress.includes(topicId);
+                if (isCompleted) {
+                    node.classList.add('completed');
+                } else if (index === activeIndex || (activeIndex === -1 && index === 0)) {
+                    node.classList.add('active-node');
+                } else {
+                    node.classList.add('locked');
+                }
+                
+                console.log(`Node ${index} (${title}): topicId=${topicId}, completed=${isCompleted}, activeIndex=${activeIndex}`);
+
+                node.onclick = async (e) => {
+                    if (node.classList.contains('locked')) {
+                        e.preventDefault();
+                        alert("Unlock this topic by completing previous ones!");
+                        return;
+                    }
+                    // Just navigate — topic is only marked complete via the 
+                    // 'Mark as Completed' button inside the lesson page.
+                };
+
+                let iconSvg = '';
+                if (node.classList.contains('completed')) {
+                    iconSvg = `<svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+                } else if (node.classList.contains('active-node')) {
+                    iconSvg = `<svg class="status-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>`;
+                } else {
+                    iconSvg = `<svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`;
+                }
+
+                node.innerHTML = `${iconSvg}<div class="node-info"><h4>${title}</h4><p>${desc}</p></div>`;
+                levelPathContainer.appendChild(node);
+            });
+
+            setTimeout(drawPath, 200);
+        }
+
+        function updateGridView() {
+            theoryGrid.querySelectorAll('.theory-card').forEach(card => {
+                const topicId = card.dataset.topicId;
+                if (userProgress.includes(topicId)) {
+                    card.classList.add('completed-card');
+                }
+            });
+        }
+
+        function drawPath() {
+            const nodes = levelPathContainer.querySelectorAll('.level-node');
+            if (nodes.length < 2) return;
+
+            const pathLine = document.getElementById('pathLine');
+            const progressLine = document.getElementById('progressLine');
+            const svg = document.getElementById('pathSvg');
+            const containerRect = levelPathContainer.getBoundingClientRect();
+            const totalHeight = levelPathContainer.scrollHeight;
+            
+            svg.setAttribute('width', containerRect.width);
+            svg.setAttribute('height', totalHeight);
+            svg.setAttribute('viewBox', `0 0 ${containerRect.width} ${totalHeight}`);
+            
+            let d = "";
+            let progressD = "";
+            let lastCompletedIndex = -1;
+
+            nodes.forEach((node, i) => { if (node.classList.contains('completed')) lastCompletedIndex = i; });
+            
+            nodes.forEach((node, i) => {
+                const rect = node.getBoundingClientRect();
+                const cx = (rect.left - containerRect.left) + (rect.width / 2);
+                const cy = (rect.top - containerRect.top + levelPathContainer.scrollTop) + (rect.height / 2);
+                
+                if (i === 0) {
+                    d += `M ${cx} ${cy}`;
+                    if (lastCompletedIndex >= 0) progressD += `M ${cx} ${cy}`;
+                } else {
+                    const prect = nodes[i-1].getBoundingClientRect();
+                    const pcx = (prect.left - containerRect.left) + (prect.width / 2);
+                    const pcy = (prect.top - containerRect.top + levelPathContainer.scrollTop) + (prect.height / 2);
+                    const dy = cy - pcy;
+                    const segment = ` C ${pcx} ${pcy + dy * 0.5}, ${cx} ${cy - dy * 0.5}, ${cx} ${cy}`;
+                    d += segment;
+                    if (i <= lastCompletedIndex + 1) progressD += segment;
+                }
+            });
+            
+            pathLine.setAttribute('d', d);
+            progressLine.setAttribute('d', progressD);
+        }
+
+        // 3. Mode Toggle & Resize
+        function setMode(mode) {
+            if (mode === 'level') {
+                theoryGrid.style.display = 'none';
+                levelPathContainer.style.display = 'flex';
+                levelModeBtn.classList.add('active');
+                gridModeBtn.classList.remove('active');
+                generateLevelNodes();
+            } else {
+                theoryGrid.style.display = 'grid';
+                levelPathContainer.style.display = 'none';
+                gridModeBtn.classList.add('active');
+                levelModeBtn.classList.remove('active');
+            }
+            localStorage.setItem('physicsMode', mode);
+        }
+
+        window.addEventListener('resize', () => { if (levelPathContainer.style.display === 'flex') drawPath(); });
+    </script>
+</body>
+
+</html>
+

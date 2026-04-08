@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceleration | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../../../../style.css">
+    <link rel="stylesheet" href="../../../../../../navbar.css">
+    <link rel="stylesheet" href="../../../ijso.css">
+
+    <!-- KaTeX for Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });"></script>
+</head>
+
+<body class="physics-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../../../../' };
+    </script>
+    <main class="theory-container" style="max-width: 1100px;">
+        <div class="theory-hero reveal" style="text-align: left; margin-bottom: 0.5rem;">
+            <br><br>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); display: block; padding-bottom: 1rem;">Acceleration</h1>
+            
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                <a href="../Kinematics.html" class="back-theory-btn" style="margin-top: 0; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Kinematics
+                </a>
+                <a href="../../../Physics.html" class="back-to-path-btn" style="display: none; margin-top: 0;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Path
+                </a>
+            </div>
+
+            <script>
+                // Context-aware navigation
+                if (window.location.search.includes('mode=level')) {
+                    const backUnitsBtn = document.querySelector('.back-theory-btn');
+                    const backPathBtn = document.querySelector('.back-to-path-btn');
+                    if (backUnitsBtn) backUnitsBtn.style.display = 'none';
+                    if (backPathBtn) backPathBtn.style.display = 'inline-flex';
+                }
+            </script>
+        </div>
+
+        <div class="content-card reveal">
+            <!-- Section 6: Acceleration -->
+            <section class="notes-section">
+                <h2>The Complete Guide to Acceleration</h2>
+                
+                <h3>1. Defining Acceleration</h3>
+                <p>In physics, <strong>Acceleration ($\mathbf{a}$)</strong> is defined as the rate of change of velocity with respect to time. While the public often uses "acceleration" to mean "speeding up," in science, it covers three distinct changes:</p>
+                <ul>
+                    <li><strong>Speeding Up:</strong> Increasing the magnitude of velocity.</li>
+                    <li><strong>Slowing Down:</strong> Decreasing the magnitude of velocity (often called Deceleration or Retardation).</li>
+                    <li><strong>Changing Direction:</strong> Even if speed remains constant, changing direction (like a moon in orbit) is a change in the velocity vector, and therefore, an acceleration.</li>
+                </ul>
+
+                <h3>2. Average vs. Instantaneous Acceleration</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <h4 style="color: #a855f7; margin-top: 0;">Average Acceleration ($\mathbf{\bar{a}}$)</h4>
+                        <p>Calculated over a finite time interval between an initial velocity ($\mathbf{v_0}$) and a final velocity ($\mathbf{v}$).</p>
+                        <div style="text-align: center; font-size: 1.2rem; margin: 1rem 0;" class="math-highlight">
+                            $$\mathbf{\bar{a}} = \frac{\Delta \mathbf{v}}{\Delta t} = \frac{\mathbf{v} - \mathbf{v_0}}{\Delta t}$$
+                        </div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <h4 style="color: #ec4899; margin-top: 0;">Instantaneous Acceleration ($\mathbf{a}$)</h4>
+                        <p>The acceleration at a specific "instant." It is the limit of average acceleration as the time interval approaches zero. In calculus terms, it is the first derivative of velocity and the second derivative of position.</p>
+                        <div style="text-align: center; font-size: 1.2rem; margin: 1rem 0;" class="math-highlight">
+                            $$\mathbf{a} = \lim_{\Delta t \to 0} \frac{\Delta \mathbf{v}}{\Delta t} = \frac{d\mathbf{v}}{dt} = \frac{d^2\mathbf{s}}{dt^2}$$
+                        </div>
+                    </div>
+                </div>
+
+                <h3>3. Units of Acceleration</h3>
+                <div style="background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6; padding: 1.25rem; border-radius: 0 12px 12px 0; margin-bottom: 1.5rem; margin-top: 1.5rem;">
+                    <h4 style="margin-top: 0; color: #3b82f6;">International System (SI)</h4>
+                    <p>The standard unit is the <strong>meter per second squared ($m/s^2$)</strong>.<br>
+                    This represents how many meters per second the velocity changes every second.</p>
+                </div>
+                
+                <div style="background: rgba(168, 85, 247, 0.1); border-left: 4px solid #a855f7; padding: 1.25rem; border-radius: 0 12px 12px 0; margin-bottom: 1.5rem;">
+                    <h4 style="margin-top: 0; color: #a855f7;">Natural Units ($g$)</h4>
+                    <p>The standard acceleration due to gravity ($g$) is a frequent benchmark.</p>
+                    <ul>
+                        <li><strong>Defined Value:</strong> $1\text{ g} = 9.80665\text{ m/s}^2$ (usually approximated as $9.8\text{ m/s}^2$).</li>
+                        <li><strong>Context:</strong> Humans feel "weightless" at $0\text{ g}$ and typically lose consciousness at sustained levels above $5\text{--}6\text{ g}$.</li>
+                    </ul>
+                </div>
+                
+                <div style="background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: 1.25rem; border-radius: 0 12px 12px 0; margin-bottom: 1.5rem;">
+                    <h4 style="margin-top: 0; color: #0ea5e9;">Gravimetry Units (CGS System)</h4>
+                    <p>Used in earth sciences to measure local gravity variations:</p>
+                    <ul>
+                        <li><strong>Gal:</strong> $1\text{ Gal} = 1\text{ cm/s}^2 = 0.01\text{ m/s}^2$.</li>
+                        <li><strong>Milligal (mGal):</strong> $1\text{ mGal} = 10^{-5}\text{ m/s}^2$. This is the "gold standard" for measuring tiny gravity anomalies.</li>
+                    </ul>
+                </div>
+
+                <h3>4. Acceleration Benchmarks (Smallest to Largest)</h3>
+                <div style="background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); overflow-x: auto; margin-bottom: 1.5rem;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid rgba(255,255,255,0.1);">
+                                <th style="padding: 1rem;">Acceleration (m/s²)</th>
+                                <th style="padding: 1rem;">Phenomenon / Event</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #9ca3af; font-weight: bold;">$0$</td>
+                                <td style="padding: 1rem;">Standing still or moving at constant velocity</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #10b981; font-weight: bold;">$1.6$</td>
+                                <td style="padding: 1rem;">Free fall acceleration on the Moon</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #f59e0b; font-weight: bold;">$3.7$</td>
+                                <td style="padding: 1rem;">Free fall acceleration on Mars</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #3b82f6; font-weight: bold;">$9.8$</td>
+                                <td style="padding: 1rem;">Free fall acceleration on Earth ($1\text{ g}$)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #8b5cf6; font-weight: bold;">$30\text{--}40$</td>
+                                <td style="padding: 1rem;">Manned rocket at launch</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #ec4899; font-weight: bold;">$37.36$</td>
+                                <td style="padding: 1rem;">Peak acceleration of fastest electric car (2023)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #ef4444; font-weight: bold;">$600$</td>
+                                <td style="padding: 1rem;">Airbags automatically deploy in a car</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #f43f5e; font-weight: bold;">$10^6$</td>
+                                <td style="padding: 1rem;">Bullet traveling through a gun barrel</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem; color: #ff0000; font-weight: bold;">$10^{12}$</td>
+                                <td style="padding: 1rem;">Free fall acceleration on a Neutron Star</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>5. Human Tolerance and Safety</h3>
+                <p>Acceleration is the primary cause of injury in accidents. Engineers use g-levels to design safety systems:</p>
+                <ul>
+                    <li style="margin-bottom: 0.5rem;"><strong>Roller Coasters:</strong> Designed for $3\text{--}4\text{ g}$ to provide thrills safely.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Fighter Pilots:</strong> Can endure up to $8\text{--}9\text{ g}$ using pressurized "G-suits" to keep blood in the brain.</li>
+                    <li><strong>Car Crashes:</strong> Chest acceleration in a $48\text{ km/h}$ crash is roughly $60\text{ g}$. Seatbelts and airbags are designed to lower the peak "g" to survivable levels.</li>
+                </ul>
+            </section>
+
+            <!-- Completion Section -->
+            <div class="completion-section reveal" style="margin-top: 3rem; text-align: center; padding: 2rem; background: rgba(255, 215, 0, 0.05); border-radius: 20px; border: 1px dashed rgba(255, 215, 0, 0.3);">
+                <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem;">Finished studying this topic?</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8;">Mark it as completed to unlock the next level in your Physics journey!</p>
+                <button id="completeBtn" class="complete-topic-btn">
+                    <span class="btn-text">Mark as Completed</span>
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+                <p id="statusMsg" style="margin-top: 1rem; font-size: 0.9rem; font-weight: 500; display: none;"></p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .complete-topic-btn {
+            background: linear-gradient(135deg, #ffd700, #ffae00);
+            color: #000;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center; gap: 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .complete-topic-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .complete-topic-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .complete-topic-btn .check-icon {
+            width: 20px;
+            height: 20px;
+            display: none;
+        }
+
+        .complete-topic-btn.is-completed {
+            background: #22c55e;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            cursor: default;
+        }
+
+        .complete-topic-btn.is-completed .check-icon {
+            display: block;
+        }
+
+        .complete-topic-btn.is-completed:hover {
+            transform: none;
+        }
+
+        .complete-topic-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .responsive-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .theory-hero h1 {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../../../../main.js"></script>
+
+    <script type="module">
+        import { auth, db } from '../../../../../../firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc, setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        const completeBtn = document.getElementById('completeBtn');
+        const statusMsg = document.getElementById('statusMsg');
+        const topicId = 'acceleration'; // Unique ID for this topic
+        let currentUser = null;
+
+        // Initialize State
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                currentUser = user;
+            } else {
+                currentUser = null;
+                completeBtn.querySelector('.btn-text').innerText = 'Log in to Track Progress';
+                completeBtn.style.opacity = '0.5';
+                completeBtn.style.cursor = 'not-allowed';
+            }
+        });
+
+        function markUIAsCompleted() {
+            completeBtn.classList.add('is-completed');
+            completeBtn.querySelector('.btn-text').innerText = 'Topic Completed ✨';
+            statusMsg.innerText = "Awesome! You've mastered this topic.";
+            statusMsg.style.display = 'block';
+            statusMsg.style.color = '#22c55e';
+            completeBtn.disabled = true;
+        }
+
+        completeBtn.addEventListener('click', async () => {
+            if (!currentUser) {
+                alert("Please log in to save your progress!");
+                return;
+            }
+            if (completeBtn.classList.contains('is-completed')) return;
+
+            completeBtn.classList.add('loading');
+            completeBtn.querySelector('.btn-text').innerText = 'Saving Progress...';
+
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                await setDoc(docRef, {
+                    completedTopics: arrayUnion(topicId)
+                }, { merge: true });
+
+                markUIAsCompleted();
+                
+                // Optional: confetti
+                if (window.confetti) {
+                    window.confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#ffd700', '#ffffff', '#22c55e']
+                    });
+                }
+            } catch (error) {
+                console.error("Error saving progress:", error);
+                statusMsg.innerText = "Oops! Something went wrong. Please try again.";
+                statusMsg.style.display = 'block';
+                statusMsg.style.color = '#ef4444';
+                completeBtn.querySelector('.btn-text').innerText = 'Mark as Completed';
+            } finally {
+                completeBtn.classList.remove('loading');
+            }
+        });
+    </script>
+</body>
+
+</html>
+

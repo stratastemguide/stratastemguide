@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theory of Static Electricity and Charge | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../../../style.css">
+    <link rel="stylesheet" href="../../../../../navbar.css">
+    <link rel="stylesheet" href="../../ijso.css">
+
+    <!-- KaTeX for Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });"></script>
+</head>
+
+<body class="physics-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../../../' };
+    </script>
+    <main class="theory-container" style="max-width: 1100px;">
+        <div class="theory-hero reveal" style="text-align: left; margin-bottom: 0.5rem;">
+            <br><br>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); display: block; padding-bottom: 1rem;">Theory of Static Electricity and Charge</h1>
+            
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                <a href="../../Physics.html" class="back-theory-btn" style="margin-top: 0; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Physics
+                </a>
+                <a href="../../Physics.html" class="back-to-path-btn" style="display: none; margin-top: 0;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Path
+                </a>
+            </div>
+
+            <script>
+                // Context-aware navigation
+                if (window.location.search.includes('mode=level')) {
+                    const backUnitsBtn = document.querySelector('.back-theory-btn');
+                    const backPathBtn = document.querySelector('.back-to-path-btn');
+                    if (backUnitsBtn) backUnitsBtn.style.display = 'none';
+                    if (backPathBtn) backPathBtn.style.display = 'inline-flex';
+                }
+            </script>
+        </div>
+
+        <div class="content-card reveal">
+            <!-- Introduction -->
+            <section class="notes-section">
+                <p>Static electricity is the imbalance of electric charges within or on the surface of a material. Unlike current electricity, which involves a continuous flow of electrons, static electricity is 'static' because the charges remain in one area until they can move away via an electric current or electrical discharge. This page details the fundamental principles governing this phenomenon.</p>
+            </section>
+
+            <!-- Section 1 -->
+            <section class="notes-section">
+                <h2>1. The Particle Level</h2>
+                <p>The foundation of electricity lies within the structure of the atom. All matter is composed of atoms, which contain three primary subatomic particles:</p>
+                <ul>
+                    <li><strong>Protons:</strong> Located in the nucleus, carrying a fundamental positive (+) charge.</li>
+                    <li><strong>Neutrons:</strong> Located in the nucleus, carrying no charge (neutral).</li>
+                    <li><strong>Electrons:</strong> Orbiting the nucleus in specific energy shells, carrying a fundamental negative (-) charge.</li>
+                </ul>
+
+                <p>The key to static electricity is that electrons are mobile. While protons are tightly bound within the the center of the atom, electrons, especially those in the outermost shells, can be gained or lost by an atom.</p>
+                <p>When an atom has an equal number of protons and electrons, the positive and negative charges cancel each other out, making the atom electrically neutral. Static charge only occurs when this balance is disrupted.</p>
+                
+                <div style="background: rgba(14, 165, 233, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.2); margin-top: 1.5rem;">
+                    <ul style="margin-bottom: 0;">
+                        <li>A <strong>Negative Charge</strong> accumulates on an object when it gains extra electrons.</li>
+                        <li>A <strong>Positive Charge</strong> accumulates on an object when it loses electrons. (It does not gain protons; it simply has a deficit of negative charge).</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 1rem;"><em>To visualize this foundation, we see the simple Bohr model of the atom illustrating the central nucleus (protons and neutrons) and the surrounding mobile electron cloud.</em></p>
+                <div style="background: rgba(14, 165, 233, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.2); text-align: center; margin-top: 1.5rem;">
+                    <img src="Electromagnetism_img/Electromagnetism1.png" alt="Parts of an Atom" style="max-width: 650px; width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.4); display: block; margin: 0 auto;">
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="notes-section">
+                <h2>2. The Mechanics of Charging</h2>
+                <p>Charges do not appear spontaneously; they are transferred from one material to another. This imbalance usually happens through physical interaction. While there are three main methods (Friction, Induction, and Conduction), the most common starting point for static electricity is friction.</p>
+
+                <h3 style="color: var(--physics-primary); margin-top: 1.5rem;">Charging by Contact (The Triboelectric Effect)</h3>
+                <p>This is the process of rubbing two different materials together. This physical contact allows the outermost electrons of the surface atoms to move. The 'how' is defined by a material property called electron affinity. Different materials hold onto their electrons with varying degrees of strength.</p>
+                <p>When two materials rub, the material with the higher electron affinity will pull electrons off the material with the lower electron affinity.</p>
+                
+                <div style="background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444; padding: 1.25rem; border-radius: 0 12px 12px 0; margin-top: 1.5rem;">
+                    <h4 style="margin-top: 0; color: #ef4444;">Example: Rubbing a balloon with wool.</h4>
+                    <ol style="margin-bottom: 0;">
+                        <li>Wool has a low electron affinity; it holds its outer electrons loosely.</li>
+                        <li>Rubber (Balloon) has a higher electron affinity relative to glass.</li>
+                        <li>As they rub, electrons are physically scraped off the glass and transfer to the silk. (<em>Note: This example combines balloon/wool and glass/silk concepts to illustrate the transfer.</em>)</li>
+                        <li>The glass (or object losing electrons), having lost electrons, is now positively charged.</li>
+                        <li>The silk (or object gaining electrons), having gained those same electrons, is now negatively charged.</li>
+                    </ol>
+                </div>
+                
+                <div style="background: rgba(239, 68, 68, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2); text-align: center; margin-top: 1.5rem;">
+                    <img src="Electromagnetism_img/Electromagnetism2.png" alt="Triboelectric Effect between Sweater and Balloon" style="max-width: 650px; width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.4); display: block; margin: 0 auto;">
+                </div>
+
+                <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(34, 197, 94, 0.1); border-radius: 8px; border: 1px dashed rgba(34, 197, 94, 0.3);"><strong>The Law of Conservation of Charge:</strong> The total charge of the isolated system remains constant during this process.</p>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="notes-section">
+                <h2>3. Electrostatic Interactions</h2>
+                <p>Once objects have accumulated static charge (one positive, one negative), they begin to exert forces on each other. This is the <strong>Fundamental Law of Electrostatics</strong>:</p>
+                
+                <div class="responsive-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="background: rgba(139, 92, 246, 0.1); border-left: 4px solid #8b5cf6; padding: 1.25rem; border-radius: 0 12px 12px 0;">
+                        <h3 style="margin-top: 0; color: #8b5cf6;">Like charges repel</h3>
+                        <p>Two objects with the same type of charge (e.g., both negative) will exert a repulsive force, pushing each other away.</p>
+                    </div>
+                    <div style="background: rgba(245, 158, 11, 0.1); border-left: 4px solid #f59e0b; padding: 1.25rem; border-radius: 0 12px 12px 0;">
+                        <h3 style="margin-top: 0; color: #f59e0b;">Opposite charges attract</h3>
+                        <p>Two objects with different charges (one positive, one negative) will exert an attractive force, pulling each other together.</p>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(139, 92, 246, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.2); text-align: center; margin-top: 1.5rem;">
+                    <img src="Electromagnetism_img/Electromagnetism3.png" alt="Electrostatic Interactions with Glass and Silk Rods" style="max-width: 650px; width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.4); display: block; margin: 0 auto;">
+                </div>
+
+                <p style="margin-top: 1.5rem;">Neutral objects do not normally interact electrostatically with each other, but a charged object can attract a neutral object through <strong>polarization</strong> (shifting the electron cloud within the neutral object).</p>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="notes-section">
+                <h2>4. Grounding and Discharge</h2>
+                <p>Static electricity is temporary. Materials want to return to a neutral state. This occurs through discharge.</p>
+                <ul>
+                    <li><strong>Insulators</strong> (like rubber or glass) are poor conductors and can hold a static charge for a long time because electrons cannot easily move through them.</li>
+                    <li><strong>Conductors</strong> (like metals) allow electrons to flow easily. If a charged conductor touches a large, neutral reservoir (like the Earth, or a large metal structure), the excess charge will immediately flow out (or electrons flow in) until the object is neutralized. This process is called <strong>Grounding</strong>.</li>
+                </ul>
+                
+                <div class="callout-box reveal" style="margin-top: 2rem;">
+                    <h3>⚡ Static Discharge</h3>
+                    <p>Static Discharge is the rapid, often spectacular transfer of electrons. This happens when the electric field built up by the static charge becomes strong enough to break down the insulating properties of the surrounding air, ionizing it and creating a conductive path. We experience this on a small scale as a spark when touching a doorknob, and on a massive scale as lightning.</p>
+                </div>
+            </section>
+
+            <!-- Completion Section -->
+            <div class="completion-section reveal" style="margin-top: 3rem; text-align: center; padding: 2rem; background: rgba(255, 215, 0, 0.05); border-radius: 20px; border: 1px dashed rgba(255, 215, 0, 0.3);">
+                <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem;">Finished studying this topic?</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8;">Mark it as completed to unlock the next level in your Physics journey!</p>
+                <button id="completeBtn" class="complete-topic-btn">
+                    <span class="btn-text">Mark as Completed</span>
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+                <p id="statusMsg" style="margin-top: 1rem; font-size: 0.9rem; font-weight: 500; display: none;"></p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .complete-topic-btn {
+            background: linear-gradient(135deg, #ffd700, #ffae00);
+            color: #000;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .complete-topic-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .complete-topic-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .complete-topic-btn .check-icon {
+            width: 20px;
+            height: 20px;
+            display: none;
+        }
+
+        .complete-topic-btn.is-completed {
+            background: #22c55e;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            cursor: default;
+        }
+
+        .complete-topic-btn.is-completed .check-icon {
+            display: block;
+        }
+
+        .complete-topic-btn.is-completed:hover {
+            transform: none;
+        }
+
+        .complete-topic-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .responsive-grid {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .theory-hero h1 {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../../../main.js"></script>
+
+    <script type="module">
+        import { auth, db } from '../../../../../firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc, setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        const completeBtn = document.getElementById('completeBtn');
+        const statusMsg = document.getElementById('statusMsg');
+        const topicId = 'static_electricity'; // Unique ID for this topic
+        let currentUser = null;
+
+        // Initialize State
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                currentUser = user;
+            } else {
+                currentUser = null;
+                completeBtn.querySelector('.btn-text').innerText = 'Log in to Track Progress';
+                completeBtn.style.opacity = '0.5';
+                completeBtn.style.cursor = 'not-allowed';
+            }
+        });
+
+        function markUIAsCompleted() {
+            completeBtn.classList.add('is-completed');
+            completeBtn.querySelector('.btn-text').innerText = 'Topic Completed ✨';
+            statusMsg.innerText = "Awesome! You've mastered this topic.";
+            statusMsg.style.display = 'block';
+            statusMsg.style.color = '#22c55e';
+            completeBtn.disabled = true;
+        }
+
+        completeBtn.addEventListener('click', async () => {
+            if (!currentUser) {
+                alert("Please log in to save your progress!");
+                return;
+            }
+            if (completeBtn.classList.contains('is-completed')) return;
+
+            completeBtn.classList.add('loading');
+            completeBtn.querySelector('.btn-text').innerText = 'Saving Progress...';
+
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                await setDoc(docRef, {
+                    completedTopics: arrayUnion(topicId)
+                }, { merge: true });
+
+                markUIAsCompleted();
+            } catch (error) {
+                console.error("Error saving progress:", error);
+                statusMsg.innerText = "Oops! Something went wrong. Please try again.";
+                statusMsg.style.display = 'block';
+                statusMsg.style.color = '#ef4444';
+                completeBtn.querySelector('.btn-text').innerText = 'Mark as Completed';
+            } finally {
+                completeBtn.classList.remove('loading');
+            }
+        });
+    </script>
+</body>
+
+</html>
+

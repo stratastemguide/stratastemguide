@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heat and Temperature | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../../../style.css">
+    <link rel="stylesheet" href="../../../../../navbar.css">
+    <link rel="stylesheet" href="../../ijso.css">
+
+    <!-- KaTeX for Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });"></script>
+</head>
+
+<body class="physics-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../../../' };
+    </script>
+    <main class="theory-container" style="max-width: 1100px;">
+        <div class="theory-hero reveal" style="text-align: left; margin-bottom: 0.5rem;">
+            <br><br>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); display: block; padding-bottom: 1rem;">Heat and Temperature</h1>
+            
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                <a href="../Thermodynamics.html" class="back-theory-btn" style="margin-top: 0; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Thermodynamics
+                </a>
+                <a href="../../Physics.html" class="back-to-path-btn" style="display: none; margin-top: 0;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Path
+                </a>
+            </div>
+
+            <script>
+                // Context-aware navigation
+                if (window.location.search.includes('mode=level')) {
+                    const backUnitsBtn = document.querySelector('.back-theory-btn');
+                    const backPathBtn = document.querySelector('.back-to-path-btn');
+                    if (backUnitsBtn) backUnitsBtn.style.display = 'none';
+                    if (backPathBtn) backPathBtn.style.display = 'inline-flex';
+                }
+            </script>
+        </div>
+
+        <div class="content-card reveal">
+            <!-- Introduction -->
+            <section class="notes-section">
+                <p>Welcome to the world of thermodynamics. Think of this as the <strong>"Science of Stuff Moving Around."</strong> Even though people use the words "heat" and "temperature" interchangeably, in a lab, they are very different tools in your kit.</p>
+                <p>Here is the breakdown of how thermal energy behaves at the microscopic level.</p>
+            </section>
+
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 2rem 0;">
+
+            <!-- Section 1: Core Concept -->
+            <section class="notes-section">
+                <h2>1. The Core Concept</h2>
+                <p>Everything around you—your desk, your water bottle, even your own skin—is made of tiny particles called atoms. These atoms are never perfectly still; they are constantly vibrating, jiggling, or flying around.</p>
+                <div style="background: rgba(16, 185, 129, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.2); margin: 1.5rem 0;">
+                    <ul style="margin-bottom: 0;">
+                        <li style="margin-bottom: 0.5rem;"><strong>Movement = Energy:</strong> In science, the energy of motion is called <strong>Kinetic Energy (K.E)</strong>.</li>
+                        <li><strong>The Rule:</strong> The faster the particles move, the more energy they have.</li>
+                    </ul>
+                </div>
+                <!-- Placeholder for Video 1 -->
+                <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 16px; border: 1px dashed rgba(255, 255, 255, 0.1); text-align: center; margin-top: 1rem;">
+                    <p style="opacity: 0.6; font-style: italic;">[Video: Vibration of atoms due to internal energy]</p>
+                </div>
+            </section>
+
+            <!-- Section 2: Temperature -->
+            <section class="notes-section">
+                <h2>2. Temperature</h2>
+                <p>Temperature is not a measure of how much heat is in an object. Instead, think of it as a <strong>speedometer for atoms</strong>.</p>
+                <div style="background: rgba(56, 189, 248, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(56, 189, 248, 0.2); margin-top: 1.5rem;">
+                    <ul style="margin-bottom: 0;">
+                        <li style="margin-bottom: 0.75rem;"><strong>Definition:</strong> Temperature is the <strong>average kinetic energy</strong> of the particles in a substance.</li>
+                        <li style="margin-bottom: 0.75rem;"><strong>How it works:</strong> If you have a cup of hot cocoa and a giant frozen lake, the cocoa has a higher temperature because its individual molecules are moving much faster than the sluggish, frozen molecules in the lake.</li>
+                        <li><strong>Measurement:</strong> We use thermometers to measure this "average jiggle" in degrees Celsius (°C), Fahrenheit (°F), or Kelvin (K).</li>
+                    </ul>
+                </div>
+                <!-- Placeholder for Pic 1 -->
+                <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 16px; border: 1px dashed rgba(255, 255, 255, 0.1); text-align: center; margin-top: 1.5rem;">
+                    <p style="opacity: 0.6; font-style: italic;">[Image: Thermometer - The average jiggle]</p>
+                </div>
+            </section>
+
+            <!-- Section 3: Heat -->
+            <section class="notes-section">
+                <h2>3. Heat</h2>
+                <p>Heat is the <strong>flow of energy</strong>. It is the actual process of energy moving from one place to another.</p>
+                <div style="background: rgba(245, 158, 11, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(245, 158, 11, 0.2); margin-top: 1.5rem;">
+                    <ul style="margin-bottom: 0;">
+                        <li style="margin-bottom: 0.75rem;"><strong>Definition:</strong> Heat is the <strong>total energy transferred</strong> from a warmer object to a cooler one.</li>
+                        <li style="margin-bottom: 0.75rem;"><strong>The Directional Law:</strong> Heat always moves from <strong>Hot to Cold</strong>. It’s like a crowd of people in a tiny room naturally wanting to spread out into an empty hallway.</li>
+                        <li><strong>Measurement:</strong> Since heat is a form of energy, we measure it in <strong>Joules (J)</strong> or <strong>Calories</strong>.</li>
+                    </ul>
+                </div>
+                <div style="background: rgba(239, 68, 68, 0.05); border-left: 4px solid #ef4444; padding: 1.25rem; border-radius: 0 12px 12px 0; margin-top: 1.5rem;">
+                    <p style="margin-bottom: 0;"><strong>The Big Difference:</strong> If you have a drop of boiling water and a pot of boiling water, they have the same temperature (100°C), but the pot has much more heat because there are more molecules moving!</p>
+                </div>
+            </section>
+
+            <!-- Section 4: Thermal Equilibrium -->
+            <section class="notes-section">
+                <h2>4. Thermal Equilibrium</h2>
+                <p>Nature loves balance. If you put a hot rock in a bucket of cold water, the rock’s fast atoms will bump into the water’s slow atoms. The rock slows down (cools), and the water speeds up (warms).</p>
+                <div style="background: rgba(139, 92, 246, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.2); margin-top: 1.5rem;">
+                    <p style="margin-bottom: 0;">Eventually, they reach the same temperature. This "stalemate" is called <strong>Thermal Equilibrium</strong>. Thermal equilibrium is reached when both objects reach the same temperature.</p>
+                </div>
+                <!-- Placeholder for Video 2 -->
+                <div style="background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 16px; border: 1px dashed rgba(255, 255, 255, 0.1); text-align: center; margin-top: 1.5rem;">
+                    <p style="opacity: 0.6; font-style: italic;">[Video: Thermal Equilibrium in Action]</p>
+                </div>
+            </section>
+
+            <!-- Completion Section -->
+            <div class="completion-section reveal" style="margin-top: 3rem; text-align: center; padding: 2rem; background: rgba(255, 215, 0, 0.05); border-radius: 20px; border: 1px dashed rgba(255, 215, 0, 0.3);">
+                <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem;">Finished studying this topic?</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8;">Mark it as completed to unlock the next level in your Thermodynamics journey!</p>
+                <button id="completeBtn" class="complete-topic-btn">
+                    <span class="btn-text">Mark as Completed</span>
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+                <p id="statusMsg" style="margin-top: 1rem; font-size: 0.9rem; font-weight: 500; display: none;"></p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .complete-topic-btn {
+            background: linear-gradient(135deg, #ffd700, #ffae00);
+            color: #000;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .complete-topic-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .complete-topic-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .complete-topic-btn .check-icon {
+            width: 20px;
+            height: 20px;
+            display: none;
+        }
+
+        .complete-topic-btn.is-completed {
+            background: #22c55e;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            cursor: default;
+        }
+
+        .complete-topic-btn.is-completed .check-icon {
+            display: block;
+        }
+
+        .complete-topic-btn.is-completed:hover {
+            transform: none;
+        }
+
+        .complete-topic-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .theory-hero h1 {
+                font-size: 2.2rem !important;
+            }
+        }
+    </style>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../../../main.js"></script>
+
+    <script type="module">
+        import { auth, db } from '../../../../../firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc, setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        const completeBtn = document.getElementById('completeBtn');
+        const statusMsg = document.getElementById('statusMsg');
+        const topicId = 'heat_temperature'; // Unique ID for this topic
+        let currentUser = null;
+
+        // Initialize State
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                currentUser = user;
+                // Check if already completed
+                try {
+                    const docRef = doc(db, "userProgress", user.uid);
+                    const docSnap = await getDoc(docRef);
+                    if (docSnap.exists() && docSnap.data().completedTopics?.includes(topicId)) {
+                        markUIAsCompleted();
+                    }
+                } catch (e) {
+                    console.error("Error checking progress:", e);
+                }
+            } else {
+                currentUser = null;
+                completeBtn.querySelector('.btn-text').innerText = 'Log in to Track Progress';
+                completeBtn.style.opacity = '0.5';
+                completeBtn.style.cursor = 'not-allowed';
+            }
+        });
+
+        function markUIAsCompleted() {
+            completeBtn.classList.add('is-completed');
+            completeBtn.querySelector('.btn-text').innerText = 'Topic Completed ✨';
+            statusMsg.innerText = "Awesome! You've mastered this topic.";
+            statusMsg.style.display = 'block';
+            statusMsg.style.color = '#22c55e';
+            completeBtn.disabled = true;
+        }
+
+        completeBtn.addEventListener('click', async () => {
+            if (!currentUser) {
+                alert("Please log in to save your progress!");
+                return;
+            }
+            if (completeBtn.classList.contains('is-completed')) return;
+
+            completeBtn.classList.add('loading');
+            completeBtn.querySelector('.btn-text').innerText = 'Saving Progress...';
+
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                await setDoc(docRef, {
+                    completedTopics: arrayUnion(topicId)
+                }, { merge: true });
+
+                markUIAsCompleted();
+            } catch (error) {
+                console.error("Error saving progress:", error);
+                statusMsg.innerText = "Oops! Something went wrong. Please try again.";
+                statusMsg.style.display = 'block';
+                statusMsg.style.color = '#ef4444';
+                completeBtn.querySelector('.btn-text').innerText = 'Mark as Completed';
+            } finally {
+                completeBtn.classList.remove('loading');
+            }
+        });
+    </script>
+</body>
+
+</html>
+

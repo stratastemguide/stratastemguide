@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Subject | Grade 10 | Strata STEM Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <style>
+        .selection-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 140px 2rem 2rem;
+            z-index: 10;
+            position: relative;
+        }
+
+        .selection-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .selection-header h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 1rem;
+        }
+
+        .selection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .subject-card {
+            background: var(--liquid-bg);
+            backdrop-filter: blur(var(--liquid-blur)) saturate(180%);
+            -webkit-backdrop-filter: blur(var(--liquid-blur)) saturate(180%);
+            border: 1px solid var(--liquid-border);
+            border-radius: 32px;
+            padding: 4rem 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.45);
+        }
+
+        .subject-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .subject-card:hover .subject-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .subject-card h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .subject-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            max-width: 200px;
+        }
+
+        .science-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.15), transparent);
+            pointer-events: none;
+        }
+
+        .maths-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.15), transparent);
+            pointer-events: none;
+        }
+
+        .back-link {
+            margin-top: 4rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .selection-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Backgrounds -->
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+    <div class="grid-overlay"></div>
+
+    <!-- Dynamic Island Header -->
+    <!-- Global Navbar logic -->
+    <script src="../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'grade-selection', rootPath: '../' };
+    </script>
+    <main class="selection-container">
+        <div class="selection-header reveal">
+            <h1>Grade 10 <span class="gradient-text">Subjects</span></h1>
+            <p>Choose your path to scientific or mathematical mastery.</p>
+        </div>
+
+        <div class="selection-grid">
+            <a href="Science/Grade 10/Grade 10 Science.html" class="subject-card science-card reveal">
+                <div class="subject-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M2 22s1-1 1-5c0-1.7.4-3.3 1-5l5-4V3s2-1 3-1 3 1 3 1v10l5 4c.6 1.7 1 3.3 1 5 0 4 1 5 1 5H2z" />
+                    </svg>
+                </div>
+                <h2>Science</h2>
+                <p>Explore the wonders of life, energy, and the physical world.</p>
+            </a>
+
+            <a href="#" class="subject-card maths-card reveal">
+                <div class="subject-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </div>
+                <h2>Maths</h2>
+                <p>Master numbers, logic, and the universal language of patterns.</p>
+            </a>
+        </div>
+
+        <a href="../Grade 6 to 13.html" class="back-link reveal">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Grades
+        </a>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>

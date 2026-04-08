@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms of Energy | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../../../style.css">
+    <link rel="stylesheet" href="../../../../../navbar.css">
+    <link rel="stylesheet" href="../../ijso.css">
+    
+    <!-- KaTeX for Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });"></script>
+</head>
+
+<body class="physics-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../../../' };
+    </script>
+    <main class="theory-container" style="max-width: 1100px;">
+        <div class="theory-hero reveal" style="text-align: left; margin-bottom: 0.5rem;">
+            <br><br>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); display: block; padding-bottom: 1rem;">Forms of Energy</h1>
+            
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                <a href="../../Physics.html" class="back-theory-btn" style="margin-top: 0; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Physics
+                </a>
+                <a href="../../Physics.html" class="back-to-path-btn" style="display: none; margin-top: 0;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Path
+                </a>
+            </div>
+
+            <script>
+                // Context-aware navigation
+                if (window.location.search.includes('mode=level')) {
+                    const backBtn = document.querySelector('.back-theory-btn');
+                    const backPathBtn = document.querySelector('.back-to-path-btn');
+                    if (backBtn) backBtn.style.display = 'none';
+                    if (backPathBtn) backPathBtn.style.display = 'inline-flex';
+                }
+            </script>
+        </div>
+
+        <div class="content-card reveal">
+            <!-- Introduction -->
+            <section class="notes-section">
+                <p>Think of energy as the <strong>ability to do work or cause change</strong>. It’s never created or destroyed; it just keeps switching costumes. This fundamental principle governs everything from the movement of planets to the vibration of atoms.</p>
+            </section>
+
+            <!-- 1. Mechanical -->
+            <section class="notes-section">
+                <h2>1. Mechanical Energy</h2>
+                <p>Mechanical energy is the sum of an object's motion and its position. It is categorized into two main types:</p>
+                
+                <div class="responsive-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="background: rgba(14, 165, 233, 0.05); border-left: 4px solid #0ea5e9; padding: 1.25rem; border-radius: 0 12px 12px 0;">
+                        <h3 style="margin-top: 0; color: #0ea5e9;">A. Kinetic Energy</h3>
+                        <p>The energy of motion. Any moving object possesses this energy. Think of a 10-ton truck moving at 60 mph. That motion is a massive "bank" of energy. It’s highly organized; every atom in that truck is heading in the same direction.</p>
+                        <p style="text-align: center; font-size: 1.2rem;" class="math-highlight">
+                            $KE = \frac{1}{2}mv^2$
+                        </p>
+                    </div>
+                    <div style="background: rgba(139, 92, 246, 0.05); border-left: 4px solid #8b5cf6; padding: 1.25rem; border-radius: 0 12px 12px 0;">
+                        <h3 style="margin-top: 0; color: #8b5cf6;">B. Potential Energy</h3>
+                        <p>This is energy stored due to an object's position or state. There are two primary forms:</p>
+                        <ul>
+                            <li><strong>Potential (Gravitational):</strong> Energy in a body because of its height. A boulder on a mountain has "high-quality" potential energy because it’s easy for it to fall and release energy into other forms like kinetic or sound.</li>
+                            <li><strong>Potential (Elastic):</strong> Energy stored in a stressed solid. When you stretch a rubber band, you force atoms into an uncomfortable alignment. They want to snap back to their low-energy state.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: center;">
+                    <img src="Energy_img/energy_elastic.jpg" alt="Elastic Potential Energy" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1);">
+                    <p style="font-size: 0.9rem; opacity: 0.6; margin-top: 0.5rem;">The willingness of matter to return to a stable configuration causes Elastic Potential Energy.</p>
+                </div>
+            </section>
+
+            <!-- 2. Chemical -->
+            <section class="notes-section">
+                <h2>2. Chemical Energy</h2>
+                <div style="display: flex; gap: 2rem; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="flex: 1; min-width: 300px;">
+                        <p>This is <strong>Low Entropy</strong> energy at its finest. In a gallon of gasoline or a piece of chocolate, energy is packed into tight, stable molecular bonds.</p>
+                        <div class="callout-box" style="margin-top: 1rem;">
+                            <h4>The "Compact" Factor</h4>
+                            <p>Chemical energy is highly ordered. Because the energy is "locked" in a small space, we can transport it easily and release it exactly when we need it.</p>
+                        </div>
+                    </div>
+                    <div style="flex: 1; min-width: 300px; text-align: center;">
+                        <img src="Energy_img/energy_chemical.jpg" alt="Chemical Energy Types" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1);">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3 & 4 -->
+            <section class="notes-section">
+                <div class="responsive-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div>
+                        <h2>3. Electrical Energy</h2>
+                        <p>Electrons are tiny, but when they move in sync, they carry massive amounts of work-potential.</p>
+                        <div style="background: rgba(255, 215, 0, 0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(255, 215, 0, 0.2);">
+                            <p style="margin: 0;"><strong>Utility:</strong> Electricity is the most "useful" form because it’s low entropy and easy to convert into light, heat, or motion with very little waste.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>4. Nuclear Energy</h2>
+                        <p>This is the most "compact" energy in the universe. Instead of rearranging molecules (Chemical), we are splitting or fusing the nucleus of the atom itself.</p>
+                        <p>The energy density here is millions of times higher than chemical energy. Small amounts of nuclear fuel like <strong>Uranium</strong> and <strong>Plutonium</strong> can release tremendous energy.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Radiant & Sound -->
+            <section class="notes-section">
+                <h2>5. Radiant (Light) & Sound Energy</h2>
+                <div class="responsive-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div style="background: rgba(239, 68, 68, 0.05); border-left: 4px solid #ef4444; padding: 1.25rem; border-radius: 0 12px 12px 0;">
+                        <h3 style="margin-top: 0; color: #ef4444;">Radiant Energy</h3>
+                        <p>Photons (light particles) carry energy as Radiation. It travels through the vacuum of space at the speed of light.</p>
+                    </div>
+                    <div style="background: rgba(34, 197, 94, 0.05); border-left: 4px solid #22c55e; padding: 1.25rem; border-radius: 0 12px 12px 0;">
+                        <h3 style="margin-top: 0; color: #22c55e;">Sound Energy</h3>
+                        <p>A "mechanical wave" that travels through a medium. It’s less "useful" for doing work because it spreads out and dissipates into the environment very quickly.</p>
+                    </div>
+                </div>
+            </section>
+
+            <hr style="opacity: 0.1; margin: 3rem 0;">
+
+            <!-- Entropy Section -->
+            <section class="notes-section">
+                <h2 style="color: #ff4d4d; font-size: 2.2rem;">Entropy: Why Heat is "Trash" Energy</h2>
+                <p>In physics, we rank energy by how ordered it is. Entropy is the measure of <strong>disorderliness</strong> in a system.</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+                    <div style="background: rgba(34, 197, 94, 0.05); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(34, 197, 94, 0.1);">
+                        <h3 style="color: #22c55e; margin-top: 0;">High-Quality (Low Entropy)</h3>
+                        <p>Energy that is organized and concentrated. It can be easily converted to other forms to do work.</p>
+                        <p><strong>Examples:</strong> Electricity, a spinning flywheel, or a tank of hydrogen.</p>
+                        <p><em>Sort of like your room after your parents pressure you to clean it—everything has its place!</em></p>
+                    </div>
+                    <div style="background: rgba(239, 68, 68, 0.05); padding: 1.5rem; border-radius: 16px; border: 1px solid rgba(239, 68, 68, 0.1);">
+                        <h3 style="color: #ef4444; margin-top: 0;">Low-Quality (High Entropy)</h3>
+                        <p>Energy that is highly disordered and dispersed. It is difficult to use effectively to do work.</p>
+                        <p><strong>Example:</strong> Waste heat. Unless there is a clear boundary of entropic difference (temperature gradient), this energy is "lost" to the system.</p>
+                        <p><em>Inevitably, both your room and any physical system will become more disordered to reach a state of high stability.</em></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Completion Section -->
+            <div class="completion-section reveal" style="margin-top: 3rem; text-align: center; padding: 2rem; background: rgba(255, 215, 0, 0.05); border-radius: 20px; border: 1px dashed rgba(255, 215, 0, 0.3);">
+                <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem;">Finished studying this topic?</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8;">Mark it as completed to unlock the next level in your Physics journey!</p>
+                <button id="completeBtn" class="complete-topic-btn">
+                    <span class="btn-text">Mark as Completed</span>
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+                <p id="statusMsg" style="margin-top: 1rem; font-size: 0.9rem; font-weight: 500; display: none;"></p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .complete-topic-btn {
+            background: linear-gradient(135deg, #ffd700, #ffae00);
+            color: #000;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .complete-topic-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 15px rgba(255, 215, 0, 0.5);
+        }
+
+        .complete-topic-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .complete-topic-btn .check-icon {
+            width: 20px;
+            height: 20px;
+            display: none;
+        }
+
+        .complete-topic-btn.is-completed {
+            background: #22c55e;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            cursor: default;
+        }
+
+        .complete-topic-btn.is-completed .check-icon {
+            display: block;
+        }
+
+        .complete-topic-btn.is-completed:hover {
+            transform: none;
+        }
+
+        .complete-topic-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .responsive-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .theory-hero h1 {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../../../main.js"></script>
+
+    <script type="module">
+        import { auth, db } from '../../../../../firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc, setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        const completeBtn = document.getElementById('completeBtn');
+        const statusMsg = document.getElementById('statusMsg');
+        const topicId = 'forms-sources'; // Unique ID matches Physics.html level mode
+        let currentUser = null;
+
+        // Initialize State
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                currentUser = user;
+                // Check if already completed
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists() && docSnap.data().completedTopics?.includes(topicId)) {
+                    markUIAsCompleted();
+                }
+            } else {
+                currentUser = null;
+                completeBtn.querySelector('.btn-text').innerText = 'Log in to Track Progress';
+                completeBtn.style.opacity = '0.5';
+                completeBtn.style.cursor = 'not-allowed';
+            }
+        });
+
+        function markUIAsCompleted() {
+            completeBtn.classList.add('is-completed');
+            completeBtn.querySelector('.btn-text').innerText = 'Topic Completed ✨';
+            statusMsg.innerText = "Awesome! You've mastered this topic.";
+            statusMsg.style.display = 'block';
+            statusMsg.style.color = '#22c55e';
+            completeBtn.disabled = true;
+        }
+
+        completeBtn.addEventListener('click', async () => {
+            if (!currentUser) {
+                alert("Please log in to save your progress!");
+                return;
+            }
+            if (completeBtn.classList.contains('is-completed')) return;
+
+            completeBtn.classList.add('loading');
+            completeBtn.querySelector('.btn-text').innerText = 'Saving Progress...';
+
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                await setDoc(docRef, {
+                    completedTopics: arrayUnion(topicId)
+                }, { merge: true });
+
+                markUIAsCompleted();
+                
+                if (window.confetti) {
+                    window.confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#ffd700', '#ffffff', '#22c55e']
+                    });
+                }
+            } catch (error) {
+                console.error("Error saving progress:", error);
+                statusMsg.innerText = "Oops! Something went wrong: " + error.message;
+                statusMsg.style.display = 'block';
+                statusMsg.style.color = '#ef4444';
+                alert("Firebase Error: " + error.message);
+                completeBtn.querySelector('.btn-text').innerText = 'Mark as Completed';
+            } finally {
+                completeBtn.classList.remove('loading');
+            }
+        });
+    </script>
+</body>
+
+</html>
+

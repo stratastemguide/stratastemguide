@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accuracy, Precision, and Experimental Errors | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../../../style.css">
+    <link rel="stylesheet" href="../../../../../navbar.css">
+    <link rel="stylesheet" href="../../ijso.css">
+
+    <!-- KaTeX for Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });"></script>
+</head>
+
+<body class="physics-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../../../' };
+    </script>
+    <main class="theory-container" style="max-width: 1100px;">
+        <div class="theory-hero reveal" style="text-align: left; margin-bottom: 0.5rem;">
+            <br><br>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); display: block; padding-bottom: 1rem;">Accuracy, Precision, and Experimental Errors</h1>
+            
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                <a href="../UnitsAndDimensions.html" class="back-theory-btn" style="margin-top: 0; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Units
+                </a>
+                <a href="../../Physics.html" class="back-to-path-btn" style="display: none; margin-top: 0;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Path
+                </a>
+            </div>
+
+            <script>
+                // Context-aware navigation
+                if (window.location.search.includes('mode=level')) {
+                    const backUnitsBtn = document.querySelector('.back-theory-btn');
+                    const backPathBtn = document.querySelector('.back-to-path-btn');
+                    if (backUnitsBtn) backUnitsBtn.style.display = 'none';
+                    if (backPathBtn) backPathBtn.style.display = 'inline-flex';
+                }
+            </script>
+        </div>
+
+        <div class="content-card reveal">
+            <!-- Section 1 -->
+            <section class="notes-section">
+                <h2>1. The Core Distinction: Accuracy vs. Precision</h2>
+                <p>These two terms describe the "quality" of your data from two different angles.</p>
+                <ul>
+                    <li><strong>Accuracy:</strong> This is about Truth. How close is your average measurement to the actual, accepted value?</li>
+                    <li><strong>Precision:</strong> This is about Consistency. How close are your repeated measurements to each other?</li>
+                </ul>
+
+                <h3 style="color: var(--physics-primary); margin-top: 1.5rem;">The Dartboard Analogy</h3>
+                <div style="background: rgba(14, 165, 233, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.2); text-align: center;">
+                    <img src="units_img/Accuracy vs Precision.jpeg" alt="Accuracy vs Precision Dartboard Analogy" style="max-width: 650px; width: 100%; border-radius: 12px; margin: 0 auto 1.5rem auto; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.4); display: block;">
+                    <ul style="margin-bottom: 0; text-align: left; display: inline-block;">
+                        <li><strong>High Accuracy, Low Precision:</strong> Your darts are all over the board, but their "average" position is the bullseye.</li>
+                        <li><strong>Low Accuracy, High Precision:</strong> All your darts are tightly bunched together in the top-right corner. You are consistent, but consistently wrong.</li>
+                        <li><strong>High Accuracy, High Precision:</strong> The gold standard. All darts are bunched tightly in the bullseye.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="notes-section">
+                <h2>2. Categorizing Experimental Errors</h2>
+                <p>We classify errors based on their source and how they affect our data.</p>
+                
+                <div class="responsive-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <!-- Systematic -->
+                    <div style="background: rgba(239, 68, 68, 0.05); border-left: 4px solid #ef4444; padding: 1.5rem; border-radius: 0 12px 12px 0;">
+                        <h3 style="margin-top: 0; color: #ef4444;">A. Systematic Errors <span style="opacity:0.8; font-size: 0.8em; font-weight: normal;">(The "Bias" Error)</span></h3>
+                        <p>These errors push all your readings in the same direction (always too high or always too low). They ruin your <strong>Accuracy</strong>.</p>
+                        <ul>
+                            <li><strong>Zero Error:</strong> A voltmeter that reads $0.1\text{ V}$ when nothing is connected.</li>
+                            <li><strong>Calibration Error:</strong> A wooden ruler that has expanded or shrunk due to humidity.</li>
+                            <li><strong>Parallax Error:</strong> A consistent habit of reading a scale from the wrong angle.</li>
+                        </ul>
+                        <p><strong>The Fix:</strong> You cannot fix these by taking averages. You must calibrate your equipment or apply a mathematical correction factor to every reading.</p>
+                    </div>
+                    <!-- Random -->
+                    <div style="background: rgba(34, 197, 94, 0.05); border-left: 4px solid #22c55e; padding: 1.5rem; border-radius: 0 12px 12px 0;">
+                        <h3 style="margin-top: 0; color: #22c55e;">B. Random Errors <span style="opacity:0.8; font-size: 0.8em; font-weight: normal;">(The "Noise" Error)</span></h3>
+                        <p>These are unpredictable fluctuations that shift readings in both directions. They ruin your <strong>Precision</strong>.</p>
+                        <ul>
+                            <li><strong>Causes:</strong> Human reaction time with a stopwatch, slight air currents on a digital balance, or temperature "noise" in a circuit.</li>
+                        </ul>
+                        <p><strong>The Fix:</strong> Take multiple readings and calculate the mean. Random errors tend to cancel each other out when averaged.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="notes-section">
+                <h2>3. The Math of Uncertainty</h2>
+                <p>In your STEM guides and IJSO practicals, you’ll need to quantify these errors using three main methods:</p>
+                
+                <div class="formula-card" style="background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 1.5rem;">
+                    <h3 style="margin-top: 0;">Absolute Error ($\Delta x$)</h3>
+                    <p>The raw difference between your measurement ($x_m$) and the true value ($x_t$).</p>
+                    <p style="text-align: center; font-size: 1.5rem; margin: 1rem 0;" class="math-highlight">
+                        $\Delta x = |x_m - x_t|$
+                    </p>
+                </div>
+
+                <div class="formula-card" style="background: rgba(139, 92, 246, 0.1); border-left: 4px solid #8b5cf6; padding: 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 1.5rem;">
+                    <h3 style="margin-top: 0;">Relative Error</h3>
+                    <p>Shows the "scale" of the error relative to the total measurement.</p>
+                    <p style="text-align: center; font-size: 1.5rem; margin: 1rem 0;" class="math-highlight">
+                        \text{Relative Error} = \frac{\Delta x}{x_t}
+                    </p>
+                </div>
+
+                <div class="formula-card" style="background: rgba(245, 158, 11, 0.1); border-left: 4px solid #f59e0b; padding: 1.5rem; border-radius: 0 12px 12px 0;">
+                    <h3 style="margin-top: 0;">Percentage Error</h3>
+                    <p>The most common way to report results in a lab report.</p>
+                    <p style="text-align: center; font-size: 1.5rem; margin: 1rem 0;" class="math-highlight">
+                        \text{Percentage Error} = \frac{|x_m - x_t|}{x_t} \times 100\%
+                    </p>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="notes-section">
+                <h2>4. Significant Figures: The Language of Precision</h2>
+                <p>Significant figures (Sig Figs) aren't just a math rule; they tell the reader exactly how sensitive your measuring tool was.</p>
+                
+                <table class="notes-table">
+                    <thead>
+                        <tr>
+                            <th>Rule</th>
+                            <th>Example</th>
+                            <th>Sig Figs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>All non-zero digits count</td><td>$1.25$</td><td>3</td></tr>
+                        <tr><td>"Sandwiched" zeros count</td><td>$105.02$</td><td>5</td></tr>
+                        <tr><td>Leading zeros never count</td><td>$0.002$</td><td>1</td></tr>
+                        <tr><td>Trailing zeros (with a decimal) count</td><td>$2.50$</td><td>3</td></tr>
+                    </tbody>
+                </table>
+                
+                <div style="background: rgba(20, 184, 166, 0.05); border-left: 4px solid #14b8a6; padding: 1.5rem; border-radius: 0 12px 12px 0; margin-top: 1.5rem;">
+                    <p style="margin: 0;"><strong>Critical Calculation Rule:</strong> Your final answer can never be more precise than your least precise measurement. If you multiply $2.5$ (2 sig figs) by $3.1415$ (5 sig figs), your answer must be rounded to 2 sig figs.</p>
+                </div>
+            </section>
+
+            <!-- Lab Pro-Tips -->
+            <div class="callout-box reveal">
+                <h3>💡 Lab Strategy for Competitive Physics</h3>
+                <ul>
+                    <li><strong>Identify the Limiting Factor:</strong> Is your experiment limited by your own reaction time (random) or a faulty scale (systematic)?</li>
+                    <li><strong>The Power of 5:</strong> For IJSO-level practicals, always aim for at least 5 sets of readings for any variable to minimize random error.</li>
+                    <li><strong>Eye Level is Key:</strong> When reading a meniscus (the curve of a liquid), always read from the bottom of the curve at eye level to avoid parallax.</li>
+                </ul>
+            </div>
+
+            <!-- Completion Section -->
+            <div class="completion-section reveal" style="margin-top: 3rem; text-align: center; padding: 2rem; background: rgba(255, 215, 0, 0.05); border-radius: 20px; border: 1px dashed rgba(255, 215, 0, 0.3);">
+                <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem;">Finished studying this topic?</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8;">Mark it as completed to unlock the next level in your Physics journey!</p>
+                <button id="completeBtn" class="complete-topic-btn">
+                    <span class="btn-text">Mark as Completed</span>
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+                <p id="statusMsg" style="margin-top: 1rem; font-size: 0.9rem; font-weight: 500; display: none;"></p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .complete-topic-btn {
+            background: linear-gradient(135deg, #ffd700, #ffae00);
+            color: #000;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .complete-topic-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .complete-topic-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .complete-topic-btn .check-icon {
+            width: 20px;
+            height: 20px;
+            display: none;
+        }
+
+        .complete-topic-btn.is-completed {
+            background: #22c55e;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            cursor: default;
+        }
+
+        .complete-topic-btn.is-completed .check-icon {
+            display: block;
+        }
+
+        .complete-topic-btn.is-completed:hover {
+            transform: none;
+        }
+
+        .complete-topic-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .responsive-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .theory-hero h1 {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../../../main.js"></script>
+
+    <script type="module">
+        import { auth, db } from '../../../../../firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc, setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        const completeBtn = document.getElementById('completeBtn');
+        const statusMsg = document.getElementById('statusMsg');
+        const topicId = 'accuracy'; // Unique ID for this topic
+        let currentUser = null;
+
+        // Initialize State
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                currentUser = user;
+            } else {
+                currentUser = null;
+                completeBtn.querySelector('.btn-text').innerText = 'Log in to Track Progress';
+                completeBtn.style.opacity = '0.5';
+                completeBtn.style.cursor = 'not-allowed';
+            }
+        });
+
+        function markUIAsCompleted() {
+            completeBtn.classList.add('is-completed');
+            completeBtn.querySelector('.btn-text').innerText = 'Topic Completed ✨';
+            statusMsg.innerText = "Awesome! You've mastered this topic.";
+            statusMsg.style.display = 'block';
+            statusMsg.style.color = '#22c55e';
+            completeBtn.disabled = true;
+        }
+
+        completeBtn.addEventListener('click', async () => {
+            if (!currentUser) {
+                alert("Please log in to save your progress!");
+                return;
+            }
+            if (completeBtn.classList.contains('is-completed')) return;
+
+            completeBtn.classList.add('loading');
+            completeBtn.querySelector('.btn-text').innerText = 'Saving Progress...';
+
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                await setDoc(docRef, {
+                    completedTopics: arrayUnion(topicId)
+                }, { merge: true });
+
+                markUIAsCompleted();
+            } catch (error) {
+                console.error("Error saving progress:", error);
+                statusMsg.innerText = "Oops! Something went wrong. Please try again.";
+                statusMsg.style.display = 'block';
+                statusMsg.style.color = '#ef4444';
+                completeBtn.querySelector('.btn-text').innerText = 'Mark as Completed';
+            } finally {
+                completeBtn.classList.remove('loading');
+            }
+        });
+    </script>
+</body>
+
+</html>
+

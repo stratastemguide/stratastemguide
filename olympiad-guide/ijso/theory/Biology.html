@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Curriculum | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../../navbar.css">
+    <link rel="stylesheet" href="ijso.css">
+    <link rel="stylesheet" href="level-path.css">
+    <style>
+        /* Biology Theme Overrides for Level Path */
+        .biology-theme {
+            --physics-primary: var(--biology-primary);
+            --node-glow: rgba(34, 197, 94, 0.5);
+        }
+        
+        .mode-toggle-btn i { font-size: 1.1rem; }
+        .mode-toggle-btn.active {
+            background: var(--biology-primary) !important;
+            border-color: var(--biology-primary) !important;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.3) !important;
+        }
+    </style>
+</head>
+
+<body class="biology-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../' };
+    </script>
+    <main class="theory-container">
+        <div class="theory-hero reveal">
+            <h1>Biology</h1>
+            <p>From the microscopic world of cells to the complex interactions of ecosystems.</p>
+            
+            <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem;">
+                <a href="../Theory.html" class="back-theory-btn reveal" style="margin-top: 0;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Theory
+                </a>
+                <div class="mode-toggle-wrapper reveal">
+                    <button class="mode-toggle-btn active" id="gridModeBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                        Grid View
+                    </button>
+                    <button class="mode-toggle-btn" id="levelModeBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                        Level Mode
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid View -->
+        <div class="theory-grid" id="theoryGrid">
+            <!-- Genetics -->
+            <div class="theory-card card-biology reveal grid-only">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1579154204601-01588f351167?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Genetics</h3>
+                        <p>Explore the laws of inheritance, DNA structure, and the secrets of heredity.</p>
+                    </div>
+                    <a href="bio/Genetics.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+
+            <!-- Coming Soon Cards -->
+            <div class="theory-card card-biology reveal grid-only">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Cell Biology</h3>
+                        <p>The fundamental unit of life: structure, function, and processes.</p>
+                    </div>
+                    <span class="card-btn magnetic" style="cursor: default; opacity: 0.6;">Coming Soon</span>
+                </div>
+            </div>
+
+            <div class="theory-card card-biology reveal grid-only">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1530836361250-ee1d9f8faccf?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Plant Physiology</h3>
+                        <p>Photosynthesis, transport, and growth in the kingdom Plantae.</p>
+                    </div>
+                    <span class="card-btn magnetic" style="cursor: default; opacity: 0.6;">Coming Soon</span>
+                </div>
+            </div>
+
+            <!-- Level Only Cards -->
+            <div class="theory-card card-biology reveal level-only" data-topic-id="non_mendelian_inheritance">
+                <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&q=80&w=800');"></div>
+                <div class="card-content">
+                    <div>
+                        <h3>Non-Mendelian Inheritance</h3>
+                        <p>Incomplete dominance, codominance, polygenic traits, and more.</p>
+                    </div>
+                    <a href="bio/Genetics/NonMendelianInheritance.html" class="card-btn magnetic">Explore Topic</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Level Path View -->
+        <div class="level-path-container" id="levelPathContainer" style="display: none;">
+            <svg class="path-svg" id="pathSvg">
+                <path class="path-line" id="pathLine"></path>
+                <path class="path-line progress-line" id="progressLine"></path>
+            </svg>
+            <!-- Nodes will be injected here by JS -->
+        </div>
+    </main>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../main.js"></script>
+
+    <script type="module">
+        import { auth, db } from '../../../firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        // Constants & State
+        const theoryGrid = document.getElementById('theoryGrid');
+        const levelPathContainer = document.getElementById('levelPathContainer');
+        const gridModeBtn = document.getElementById('gridModeBtn');
+        const levelModeBtn = document.getElementById('levelModeBtn');
+        
+        let userProgress = [];
+        let currentUser = null;
+
+        // 1. Auth & Initial Load
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedMode = localStorage.getItem('biologyMode') || 'grid';
+            setMode(savedMode);
+            
+            onAuthStateChanged(auth, async (user) => {
+                if (user) {
+                    currentUser = user;
+                    await loadUserProgress();
+                } else {
+                    currentUser = null;
+                    userProgress = [];
+                    generateLevelNodes();
+                    updateGridView();
+                }
+            });
+
+            if (gridModeBtn) gridModeBtn.addEventListener('click', () => setMode('grid'));
+            if (levelModeBtn) levelModeBtn.addEventListener('click', () => setMode('level'));
+        });
+
+        async function loadUserProgress() {
+            if (!currentUser) return;
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    userProgress = docSnap.data().completedTopics || [];
+                }
+                generateLevelNodes();
+                updateGridView();
+            } catch (error) {
+                console.error("Error loading progress:", error);
+            }
+        }
+
+        // 2. UI Generation
+        function generateLevelNodes() {
+            const cards = theoryGrid.querySelectorAll('.theory-card[data-topic-id]');
+            const existingElements = levelPathContainer.querySelectorAll('.level-node, .tier-header');
+            existingElements.forEach(el => el.remove());
+
+            let currentTier = 0;
+            const tierSize = 4;
+            
+            let activeIndex = -1;
+            cards.forEach((card, index) => {
+                const topicId = card.dataset.topicId;
+                if (!userProgress.includes(topicId) && activeIndex === -1) {
+                    activeIndex = index;
+                }
+            });
+
+            cards.forEach((card, index) => {
+                const title = card.querySelector('h3').innerText;
+                const desc = card.querySelector('p').innerText;
+                const link = card.querySelector('a.card-btn').getAttribute('href');
+                const topicId = card.dataset.topicId;
+                
+                if (index % tierSize === 0) {
+                    currentTier++;
+                    const header = document.createElement('div');
+                    header.className = 'tier-header';
+                    const tierNames = ['Genetics', 'Molecular Biology', 'Evolution', 'Ecology'];
+                    header.innerHTML = `<h2>${tierNames[currentTier-1] || 'Advanced topics'}</h2>`;
+                    levelPathContainer.appendChild(header);
+                }
+
+                const node = document.createElement('a');
+                const levelModeLink = link.includes('?') ? `${link}&mode=level` : `${link}?mode=level`;
+                node.href = levelModeLink;
+                node.className = 'level-node';
+                
+                const isCompleted = userProgress.includes(topicId);
+                if (isCompleted) {
+                    node.classList.add('completed');
+                } else if (index === activeIndex || (activeIndex === -1 && index === 0)) {
+                    node.classList.add('active-node');
+                } else {
+                    node.classList.add('locked');
+                }
+                
+                node.onclick = async (e) => {
+                    if (node.classList.contains('locked')) {
+                        e.preventDefault();
+                        alert("Unlock this topic by completing previous ones!");
+                        return;
+                    }
+                };
+
+                let iconSvg = '';
+                if (node.classList.contains('completed')) {
+                    iconSvg = `<svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+                } else if (node.classList.contains('active-node')) {
+                    iconSvg = `<svg class="status-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>`;
+                } else {
+                    iconSvg = `<svg class="status-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`;
+                }
+
+                node.innerHTML = `${iconSvg}<div class="node-info"><h4>${title}</h4><p>${desc}</p></div>`;
+                levelPathContainer.appendChild(node);
+            });
+
+            setTimeout(drawPath, 200);
+        }
+
+        function updateGridView() {
+            theoryGrid.querySelectorAll('.theory-card').forEach(card => {
+                const topicId = card.dataset.topicId;
+                if (userProgress.includes(topicId)) {
+                    card.classList.add('completed-card');
+                }
+            });
+        }
+
+        function drawPath() {
+            const nodes = levelPathContainer.querySelectorAll('.level-node');
+            if (nodes.length < 2) return;
+
+            const pathLine = document.getElementById('pathLine');
+            const progressLine = document.getElementById('progressLine');
+            const svg = document.getElementById('pathSvg');
+            const containerRect = levelPathContainer.getBoundingClientRect();
+            const totalHeight = levelPathContainer.scrollHeight;
+            
+            svg.setAttribute('width', containerRect.width);
+            svg.setAttribute('height', totalHeight);
+            svg.setAttribute('viewBox', `0 0 ${containerRect.width} ${totalHeight}`);
+            
+            let d = "";
+            let progressD = "";
+            let lastCompletedIndex = -1;
+
+            nodes.forEach((node, i) => { if (node.classList.contains('completed')) lastCompletedIndex = i; });
+            
+            nodes.forEach((node, i) => {
+                const rect = node.getBoundingClientRect();
+                const cx = (rect.left - containerRect.left) + (rect.width / 2);
+                const cy = (rect.top - containerRect.top + levelPathContainer.scrollTop) + (rect.height / 2);
+                
+                if (i === 0) {
+                    d += `M ${cx} ${cy}`;
+                    if (lastCompletedIndex >= 0) progressD += `M ${cx} ${cy}`;
+                } else {
+                    const prect = nodes[i-1].getBoundingClientRect();
+                    const pcx = (prect.left - containerRect.left) + (prect.width / 2);
+                    const pcy = (prect.top - containerRect.top + levelPathContainer.scrollTop) + (prect.height / 2);
+                    const dy = cy - pcy;
+                    const segment = ` C ${pcx} ${pcy + dy * 0.5}, ${cx} ${cy - dy * 0.5}, ${cx} ${cy}`;
+                    d += segment;
+                    if (i <= lastCompletedIndex + 1) progressD += segment;
+                }
+            });
+            
+            pathLine.setAttribute('d', d);
+            progressLine.setAttribute('d', progressD);
+        }
+
+        function setMode(mode) {
+            if (mode === 'level') {
+                theoryGrid.style.display = 'none';
+                levelPathContainer.style.display = 'flex';
+                levelModeBtn.classList.add('active');
+                gridModeBtn.classList.remove('active');
+                generateLevelNodes();
+            } else {
+                theoryGrid.style.display = 'grid';
+                levelPathContainer.style.display = 'none';
+                gridModeBtn.classList.add('active');
+                levelModeBtn.classList.remove('active');
+            }
+            localStorage.setItem('biologyMode', mode);
+        }
+
+        window.addEventListener('resize', () => { if (levelPathContainer.style.display === 'flex') drawPath(); });
+    </script>
+</body>
+
+</html>
+

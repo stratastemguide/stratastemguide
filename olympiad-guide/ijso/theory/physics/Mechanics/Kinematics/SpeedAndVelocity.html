@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed and Velocity | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../../../../style.css">
+    <link rel="stylesheet" href="../../../../../../navbar.css">
+    <link rel="stylesheet" href="../../../ijso.css">
+
+    <!-- KaTeX for Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });"></script>
+</head>
+
+<body class="physics-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../../../../' };
+    </script>
+    <main class="theory-container" style="max-width: 1100px;">
+        <div class="theory-hero reveal" style="text-align: left; margin-bottom: 0.5rem;">
+            <br><br>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); display: block; padding-bottom: 1rem;">Speed and Velocity</h1>
+            
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                <a href="../Kinematics.html" class="back-theory-btn" style="margin-top: 0; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Kinematics
+                </a>
+                <a href="../../../Physics.html" class="back-to-path-btn" style="display: none; margin-top: 0;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Path
+                </a>
+            </div>
+
+            <script>
+                // Context-aware navigation
+                if (window.location.search.includes('mode=level')) {
+                    const backUnitsBtn = document.querySelector('.back-theory-btn');
+                    const backPathBtn = document.querySelector('.back-to-path-btn');
+                    if (backUnitsBtn) backUnitsBtn.style.display = 'none';
+                    if (backPathBtn) backPathBtn.style.display = 'inline-flex';
+                }
+            </script>
+        </div>
+
+        <div class="content-card reveal">
+            <!-- Intro Section -->
+            <section class="notes-section">
+                <h2>Speed and Velocity: The Physics of Motion</h2>
+                <p>In common speech, "speed" and "velocity" are used interchangeably. In Physics, they are fundamentally different because one cares about direction and the other does not.</p>
+            </section>
+
+            <!-- Section 1 -->
+            <section class="notes-section">
+                <h2>1. Speed ($v$)</h2>
+                <p>Speed is a <strong>scalar quantity</strong>. It is the rate at which an object covers distance.</p>
+                <div style="background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6; padding: 1.25rem; border-radius: 0 12px 12px 0; margin-bottom: 1.5rem;">
+                    <h3 style="margin-top: 0; color: #3b82f6;">Proportionality:</h3>
+                    <ul>
+                        <li>Speed is <strong>directly proportional</strong> to distance ($v \propto s$) when time is constant.</li>
+                        <li>Speed is <strong>inversely proportional</strong> to time ($v \propto 1/t$) when distance is constant.</li>
+                    </ul>
+                </div>
+
+                <div class="formula-card" style="background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: 1.5rem; border-radius: 0 12px 12px 0; margin-bottom: 1.5rem;">
+                    <h3 style="margin-top: 0;">The Basic Formula:</h3>
+                    <div style="text-align: center; font-size: 1.5rem; margin: 1rem 0;" class="math-highlight">
+                        $$v = \frac{s}{t}$$
+                    </div>
+                </div>
+
+                <h3>Average vs. Instantaneous Speed</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <h4 style="color: #a855f7; margin-top: 0;">Average Speed ($\bar{v}$)</h4>
+                        <p>The total distance divided by the total time. It ignores the stops and starts in between.</p>
+                        <div style="text-align: center; font-size: 1.2rem; margin: 1rem 0;" class="math-highlight">
+                            $$\bar{v} = \frac{\Delta s}{\Delta t}$$
+                        </div>
+                    </div>
+                    <div style="background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                        <h4 style="color: #ec4899; margin-top: 0;">Instantaneous Speed</h4>
+                        <p>The speed at a specific moment (what your car's speedometer shows). Mathematically, it is the limit as time approaches zero:</p>
+                        <div style="text-align: center; font-size: 1.2rem; margin: 1rem 0;" class="math-highlight">
+                            $$v = \lim_{\Delta t \to 0} \frac{\Delta s}{\Delta t} = \frac{ds}{dt}$$
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="notes-section">
+                <h2>2. Velocity ($\mathbf{v}$)</h2>
+                <p>Velocity is a <strong>vector quantity</strong>. It is the rate of change of displacement. While speed asks "How fast?", velocity asks "How fast and in what direction?"</p>
+                
+                <div class="formula-card" style="background: rgba(14, 165, 233, 0.1); border-left: 4px solid #0ea5e9; padding: 1.5rem; border-radius: 0 12px 12px 0;">
+                    <h3 style="margin-top: 0;">Average Velocity ($\mathbf{\bar{v}}$):</h3>
+                    <div style="text-align: center; font-size: 1.5rem; margin: 1rem 0;" class="math-highlight">
+                        $$\mathbf{\bar{v}} = \frac{\Delta \mathbf{s}}{\Delta t}$$
+                    </div>
+                </div>
+
+                <div class="callout-box" style="margin-top: 2rem;">
+                    <h3>The Magnitude Connection</h3>
+                    <p>The magnitude of instantaneous velocity is exactly equal to the instantaneous speed ($v = |\mathbf{v}|$).</p>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="notes-section">
+                <h2>3. Units and Conversions</h2>
+                <p>The SI unit for both is <strong>meters per second (m/s)</strong>.</p>
+                <h3>Common Conversion Rules of Thumb:</h3>
+                <div style="background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid rgba(255,255,255,0.1);">
+                                <th style="padding: 1rem;">Unit</th>
+                                <th style="padding: 1rem;">Metric Conversion</th>
+                                <th style="padding: 1rem;">Quick Estimation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem;">1 km/h</td>
+                                <td style="padding: 1rem;">$\approx 0.28 \text{ m/s}$</td>
+                                <td style="padding: 1rem;">$\approx 1/4 \text{ m/s}$</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem;">1 mph</td>
+                                <td style="padding: 1rem;">$\approx 0.45 \text{ m/s}$</td>
+                                <td style="padding: 1rem;">$\approx 1/2 \text{ m/s}$</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem;">1 knot</td>
+                                <td style="padding: 1rem;">$1 \text{ nautical mile/h}$</td>
+                                <td style="padding: 1rem;">$\approx 0.51 \text{ m/s}$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="notes-section">
+                <h2>4. Special Speed Constants</h2>
+                <p>In advanced physics and IJSO theory, we often measure speed relative to universal constants:</p>
+                <ul>
+                    <li style="margin-bottom: 1rem;">
+                        <strong>Mach Number:</strong> The ratio of an object's speed to the speed of sound ($\approx 343 \text{ m/s}$ at room temp).<br>
+                        <em>Example:</em> The Concorde flew at Mach 2.0 ($2 \times$ speed of sound).
+                    </li>
+                    <li>
+                        <strong>Speed of Light ($c$):</strong> The ultimate speed limit of the universe.<br>
+                        $c = 299,792,458 \text{ m/s}$ (Commonly used as $3.00 \times 10^8 \text{ m/s}$).
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="notes-section">
+                <h2>5. Speed Benchmarks (Slowest to Fastest)</h2>
+                <p>To give your students perspective, here is a "Speed Scale" for your site:</p>
+                <div style="background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                        <thead>
+                            <tr style="border-bottom: 2px solid rgba(255,255,255,0.1);">
+                                <th style="padding: 1rem;">Speed (m/s)</th>
+                                <th style="padding: 1rem;">Phenomenon</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #3b82f6; font-weight: bold;">$10^{-9}$</td>
+                                <td style="padding: 1rem;">Continental plate movement / Hair growth</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #10b981; font-weight: bold;">$1.3$</td>
+                                <td style="padding: 1rem;">Typical human walking pace</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #f59e0b; font-weight: bold;">$10.4$</td>
+                                <td style="padding: 1rem;">Usain Bolt (World Record Sprint)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #ec4899; font-weight: bold;">$343$</td>
+                                <td style="padding: 1rem;">Speed of sound (Air, Room Temp)</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                <td style="padding: 1rem; color: #8b5cf6; font-weight: bold;">$7,700$</td>
+                                <td style="padding: 1rem;">International Space Station (ISS) in orbit</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem; color: #ef4444; font-weight: bold;">$299,792,458$</td>
+                                <td style="padding: 1rem;">Speed of light in a vacuum ($c$)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Completion Section -->
+            <div class="completion-section reveal" style="margin-top: 3rem; text-align: center; padding: 2rem; background: rgba(255, 215, 0, 0.05); border-radius: 20px; border: 1px dashed rgba(255, 215, 0, 0.3);">
+                <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem;">Finished studying this topic?</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8;">Mark it as completed to unlock the next level in your Physics journey!</p>
+                <button id="completeBtn" class="complete-topic-btn">
+                    <span class="btn-text">Mark as Completed</span>
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+                <p id="statusMsg" style="margin-top: 1rem; font-size: 0.9rem; font-weight: 500; display: none;"></p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .complete-topic-btn {
+            background: linear-gradient(135deg, #ffd700, #ffae00);
+            color: #000;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center; gap: 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .complete-topic-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .complete-topic-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .complete-topic-btn .check-icon {
+            width: 20px;
+            height: 20px;
+            display: none;
+        }
+
+        .complete-topic-btn.is-completed {
+            background: #22c55e;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            cursor: default;
+        }
+
+        .complete-topic-btn.is-completed .check-icon {
+            display: block;
+        }
+
+        .complete-topic-btn.is-completed:hover {
+            transform: none;
+        }
+
+        .complete-topic-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .responsive-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .theory-hero h1 {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../../../../main.js"></script>
+
+    <script type="module">
+        import { auth, db } from '../../../../../../firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc, setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        const completeBtn = document.getElementById('completeBtn');
+        const statusMsg = document.getElementById('statusMsg');
+        const topicId = 'speed-and-velocity'; // Unique ID for this topic
+        let currentUser = null;
+
+        // Initialize State
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                currentUser = user;
+            } else {
+                currentUser = null;
+                completeBtn.querySelector('.btn-text').innerText = 'Log in to Track Progress';
+                completeBtn.style.opacity = '0.5';
+                completeBtn.style.cursor = 'not-allowed';
+            }
+        });
+
+        function markUIAsCompleted() {
+            completeBtn.classList.add('is-completed');
+            completeBtn.querySelector('.btn-text').innerText = 'Topic Completed ✨';
+            statusMsg.innerText = "Awesome! You've mastered this topic.";
+            statusMsg.style.display = 'block';
+            statusMsg.style.color = '#22c55e';
+            completeBtn.disabled = true;
+        }
+
+        completeBtn.addEventListener('click', async () => {
+            if (!currentUser) {
+                alert("Please log in to save your progress!");
+                return;
+            }
+            if (completeBtn.classList.contains('is-completed')) return;
+
+            completeBtn.classList.add('loading');
+            completeBtn.querySelector('.btn-text').innerText = 'Saving Progress...';
+
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                await setDoc(docRef, {
+                    completedTopics: arrayUnion(topicId)
+                }, { merge: true });
+
+                markUIAsCompleted();
+                
+                // Optional: confetti
+                if (window.confetti) {
+                    window.confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#ffd700', '#ffffff', '#22c55e']
+                    });
+                }
+            } catch (error) {
+                console.error("Error saving progress:", error);
+                statusMsg.innerText = "Oops! Something went wrong. Please try again.";
+                statusMsg.style.display = 'block';
+                statusMsg.style.color = '#ef4444';
+                completeBtn.querySelector('.btn-text').innerText = 'Mark as Completed';
+            } finally {
+                completeBtn.classList.remove('loading');
+            }
+        });
+    </script>
+</body>
+
+</html>
+

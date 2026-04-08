@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of Physical Quantities | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../../../style.css">
+    <link rel="stylesheet" href="../../../../../navbar.css">
+    <link rel="stylesheet" href="../../ijso.css">
+    
+    <!-- KaTeX for Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });"></script>
+</head>
+
+<body class="physics-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../../../' };
+    </script>
+    <main class="theory-container" style="max-width: 1100px;">
+        <div class="theory-hero reveal" style="text-align: left; margin-bottom: 0.5rem;">
+            <br><br>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); display: block; padding-bottom: 1rem;">What Actually Defines a Physical Quantity?</h1>
+            
+            <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
+                <a href="../UnitsAndDimensions.html" class="back-theory-btn" style="margin-top: 0; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Units
+                </a>
+                <a href="../../Physics.html" class="back-to-path-btn" style="display: none; margin-top: 0;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Path
+                </a>
+            </div>
+
+            <script>
+                // Context-aware navigation
+                if (window.location.search.includes('mode=level')) {
+                    const backUnitsBtn = document.querySelector('.back-theory-btn');
+                    const backPathBtn = document.querySelector('.back-to-path-btn');
+                    if (backUnitsBtn) backUnitsBtn.style.display = 'none';
+                    if (backPathBtn) backPathBtn.style.display = 'inline-flex';
+                }
+            </script>
+        </div>
+
+        <div class="content-card reveal">
+            <!-- Introduction -->
+            <section class="notes-section">
+                <p>In the world of physics, a Physical Quantity isn't just a number; it’s any property of a material or a natural event that we can actually quantify through measurement. Think of it as the language we use to describe the physical universe.</p>
+            </section>
+
+            <!-- Section 1 -->
+            <section class="notes-section">
+                <h2>1. The Two Halves of a Measurement</h2>
+                <p>Every time you take a measurement, you’re dealing with two inseparable parts:</p>
+                <ul>
+                    <li><strong>The Numerical Value ($n$):</strong> This is the "how much."</li>
+                    <li><strong>The Unit ($u$):</strong> This is the "of what"—the standard we compare the measurement against.</li>
+                </ul>
+                <p>The core rule here is that the actual physical "amount" doesn't change just because you switch units. We write this as:</p>
+                <p style="text-align: center; font-size: 1.5rem; margin: 1.5rem 0;" class="math-highlight">
+                    $$Q = n_1u_1 = n_2u_2$$
+                </p>
+                
+                <div style="background: rgba(14, 165, 233, 0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.2);">
+                    <p style="margin: 0;"><strong>The Trade-off:</strong> There’s an inverse relationship at play. If you choose a smaller unit (like swapping meters for millimeters), the number has to get bigger to keep the total quantity balanced. It’s why $1\text{ meter}$ and $1000\text{ millimeters}$ describe the exact same length.</p>
+                </div>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="notes-section">
+                <h2>2. Scalars vs. Vectors: Does Direction Matter?</h2>
+                <p>This is the first "fork in the road" for any physics problem. You have to decide if the direction of the quantity changes the outcome.</p>
+                
+                <div class="responsive-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.5rem;">
+                    <div style="background: rgba(239, 68, 68, 0.05); border-left: 4px solid #ef4444; padding: 1.25rem; border-radius: 0 12px 12px 0;">
+                        <h3 style="margin-top: 0; color: #ef4444;">A. Scalar Quantities</h3>
+                        <p>Scalars are the "easy" ones. They are defined entirely by magnitude. You can add, subtract, and multiply them using the basic math you’ve used since primary school.</p>
+                        <p><strong>Examples:</strong> Mass, time, temperature, and energy.</p>
+                        <p><strong>The Logic:</strong> If you’re carrying $5\text{ kg}$ and pick up another $2\text{ kg}$, you’re carrying $7\text{ kg}$. The direction you're facing doesn't change the weight.</p>
+                    </div>
+                    <div style="background: rgba(34, 197, 94, 0.05); border-left: 4px solid #22c55e; padding: 1.25rem; border-radius: 0 12px 12px 0;">
+                        <h3 style="margin-top: 0; color: #22c55e;">B. Vector Quantities</h3>
+                        <p>Vectors are a bit more stubborn. They require both magnitude and a specific direction. Because direction is involved, they follow vector algebra rather than simple arithmetic.</p>
+                        <p><strong>Examples:</strong> Force, velocity, acceleration, and displacement.</p>
+                        <p><strong>The Logic:</strong> Imagine pushing a door with $20\text{ N}$ of force while someone else pushes back with $20\text{ N}$. Even though $40\text{ N}$ of total effort is happening, the door doesn't move. The result is $0$ because the directions cancel out.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="notes-section">
+                <h2>3. The "Test of Truth": Dimensional Homogeneity</h2>
+                <p>One of the most useful "cheat codes" in physics is the Principle of Homogeneity. It’s a simple rule: you can only add or subtract things that are of the same nature.</p>
+                
+                <div style="display: flex; gap: 1.5rem; margin: 1.5rem 0; flex-wrap: wrap;">
+                    <div style="flex: 1; background: rgba(34, 197, 94, 0.1); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(34, 197, 94, 0.2);">
+                        <p style="margin: 0; font-weight: 600; color: #22c55e;">Allowed:</p>
+                        <p style="margin: 0.5rem 0 0 0;">$5\text{ meters} + 2\text{ meters} = 7\text{ meters}$</p>
+                    </div>
+                    <div style="flex: 1; background: rgba(239, 68, 68, 0.1); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
+                        <p style="margin: 0; font-weight: 600; color: #ef4444;">Impossible:</p>
+                        <p style="margin: 0.5rem 0 0 0;">$5\text{ kilograms} + 10\text{ seconds}$</p>
+                    </div>
+                </div>
+
+                <p>If you're ever looking at a complex formula and the units on the left don't match the units on the right, the formula is wrong. Period. This is the fastest way to catch mistakes in an exam.</p>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="notes-section">
+                <h2>4. Why We Use the SI System</h2>
+                <p>Historically, the world was a mess of different systems. You had:</p>
+                <div style="background: rgba(139, 92, 246, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(139, 92, 246, 0.2); margin: 1.5rem 0;">
+                    <ul style="margin: 0; list-style-type: none; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;">
+                        <li><strong>CGS:</strong> Centimeter, Gram, Second</li>
+                        <li><strong>FPS:</strong> Foot, Pound, Second</li>
+                        <li><strong>MKS:</strong> Meter, Kilogram, Second</li>
+                    </ul>
+                </div>
+                <p>Mixing these up leads to disasters—literally. In 1999, NASA lost a Mars orbiter because one team used metric units while another used English units. The SI System (International System of Units) was created to prevent those kinds of million-dollar math errors by giving everyone on Earth a single, shared "source of truth."</p>
+            </section>
+
+            <!-- Pro-Tip -->
+            <div class="callout-box reveal">
+                <h3>💡 The "Before You Solve" Checklist</h3>
+                <p>Before you start any calculation, ask yourself:</p>
+                <ul>
+                    <li>Is this a Scalar or a Vector? (Do I need to draw an arrow?)</li>
+                    <li>Is everything in SI? (Are there any sneaky centimeters that need to be meters?)</li>
+                </ul>
+            </div>
+
+            <!-- Completion Section -->
+            <div class="completion-section reveal" style="margin-top: 3rem; text-align: center; padding: 2rem; background: rgba(255, 215, 0, 0.05); border-radius: 20px; border: 1px dashed rgba(255, 215, 0, 0.3);">
+                <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem;">Finished studying this topic?</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8;">Mark it as completed to unlock the next level in your Physics journey!</p>
+                <button id="completeBtn" class="complete-topic-btn">
+                    <span class="btn-text">Mark as Completed</span>
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+                <p id="statusMsg" style="margin-top: 1rem; font-size: 0.9rem; font-weight: 500; display: none;"></p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .complete-topic-btn {
+            background: linear-gradient(135deg, #ffd700, #ffae00);
+            color: #000;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .complete-topic-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .complete-topic-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .complete-topic-btn .check-icon {
+            width: 20px;
+            height: 20px;
+            display: none;
+        }
+
+        .complete-topic-btn.is-completed {
+            background: #22c55e;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            cursor: default;
+        }
+
+        .complete-topic-btn.is-completed .check-icon {
+            display: block;
+        }
+
+        .complete-topic-btn.is-completed:hover {
+            transform: none;
+        }
+
+        .complete-topic-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .responsive-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .theory-hero h1 {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../../../main.js"></script>
+
+    <script type="module">
+        import { auth, db } from '../../../../../firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc, setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        const completeBtn = document.getElementById('completeBtn');
+        const statusMsg = document.getElementById('statusMsg');
+        const topicId = 'basics'; // Unique ID for this topic
+        let currentUser = null;
+
+        // Initialize State
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                currentUser = user;
+            } else {
+                currentUser = null;
+                completeBtn.querySelector('.btn-text').innerText = 'Log in to Track Progress';
+                completeBtn.style.opacity = '0.5';
+                completeBtn.style.cursor = 'not-allowed';
+            }
+        });
+
+        function markUIAsCompleted() {
+            completeBtn.classList.add('is-completed');
+            completeBtn.querySelector('.btn-text').innerText = 'Topic Completed ✨';
+            statusMsg.innerText = "Awesome! You've mastered this topic.";
+            statusMsg.style.display = 'block';
+            statusMsg.style.color = '#22c55e';
+            completeBtn.disabled = true;
+        }
+
+        completeBtn.addEventListener('click', async () => {
+            if (!currentUser) {
+                alert("Please log in to save your progress!");
+                return;
+            }
+            if (completeBtn.classList.contains('is-completed')) return;
+
+            completeBtn.classList.add('loading');
+            completeBtn.querySelector('.btn-text').innerText = 'Saving Progress...';
+
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                await setDoc(docRef, {
+                    completedTopics: arrayUnion(topicId)
+                }, { merge: true });
+
+                markUIAsCompleted();
+                
+                // Optional: confetti or success sound
+                if (window.confetti) {
+                    window.confetti({
+                        particleCount: 100,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#ffd700', '#ffffff', '#22c55e']
+                    });
+                }
+            } catch (error) {
+                console.error("Error saving progress:", error);
+                statusMsg.innerText = "Oops! Something went wrong: " + error.message;
+                statusMsg.style.display = 'block';
+                statusMsg.style.color = '#ef4444';
+                alert("Firebase Error: " + error.message);
+                completeBtn.querySelector('.btn-text').innerText = 'Mark as Completed';
+            } finally {
+                completeBtn.classList.remove('loading');
+            }
+        });
+    </script>
+</body>
+
+</html>
+

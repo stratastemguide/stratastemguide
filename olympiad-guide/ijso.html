@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IJSO Guide | Strata STEM Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="guide-style.css">
+    <!-- Re-using global classes for consistency -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../navbar.css">
+</head>
+
+<body>
+    <!-- Backgrounds -->
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+    <div class="grid-overlay"></div>
+
+    <!-- Global Navbar logic -->
+    <script src="../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../' };
+    </script>
+
+    <main class="guide-container">
+        <div class="guide-hero reveal">
+            <h1>IJSO <span class="gradient-text">Guide</span></h1>
+            <p>Access curated materials, intensive practice sets, and expert strategies to excel in Science Olympiads
+                globally.</p>
+        </div>
+
+        <div class="resource-grid">
+            <a href="ijso/Theory.html" class="resource-card reveal" style="background-image: url('../img/Theory.avif');">
+                <div class="card-content">
+                    <h3>Theory</h3>
+                </div>
+            </a>
+            <a href="#" class="resource-card reveal" style="background-image: url('practice.jpg');">
+                <div class="card-content">
+                    <h3>Practice Questions</h3>
+                </div>
+            </a>
+            <a href="#" class="resource-card reveal" style="background-image: url('materials.jpg');">
+                <div class="card-content">
+                    <h3>Study Materials</h3>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../logo.png" alt="Strata STEM Guide Logo">
+                        <span>Strata STEM Guide</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../main.js"></script>
+</body>
+
+</html>

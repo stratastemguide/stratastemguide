@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Periodic Table | Strata STEM Guide</title>
+    <!-- Strata Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="ptable.css">
+    <link rel="icon" type="image/x-icon" href="../logo.png">
+</head>
+<body class="Dark custom-pt-body">
+    <!-- Liquid Glass Ambient Backgrounds -->
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+    <div class="grid-overlay"></div>
+
+    <!-- Navigation -->
+    <script>
+        window.navbarConfig = { activePage: 'ptable', rootPath: '../' };
+    </script>
+    <script src="../navbar.js"></script>
+
+    <!-- Sidebar Toggle Button -->
+    <button id="pt-sidebar-toggle" class="pt-sidebar-toggle glass-panel">
+        <span class="toggle-icon">i</span>
+        <span class="toggle-text">Element Details</span>
+    </button>
+
+    <!-- Custom PTable Application -->
+    <div id="strata-ptable-app" class="pt-app-container">
+        
+        <!-- Details Sidebar -->
+        <aside class="pt-sidebar sidebar-closed" id="pt-sidebar">
+            <div class="sidebar-header-row">
+                <h3>Element Info</h3>
+                <button id="pt-sidebar-close" class="pt-sidebar-close">&times;</button>
+            </div>
+            <div id="pt-closeup" class="pt-closeup cat-nonmetal">
+                <div class="cl-top">
+                    <span class="cl-atomic" id="cl-atomic">1</span>
+                    <span class="cl-mass" id="cl-mass">1.008</span>
+                </div>
+                <div class="cl-symbol" id="cl-symbol">H</div>
+                <div class="cl-name" id="cl-name">Hydrogen</div>
+            </div>
+
+            <div class="pt-properties">
+                <div class="prop-dropdown-wrap">
+                    <select class="prop-view-select">
+                        <option>Properties</option>
+                        <option>Electrons</option>
+                        <option>Isotopes</option>
+                    </select>
+                </div>
+                
+                <ul class="prop-list">
+                    <li><span class="p-label">Series</span><span class="p-val" id="p-series">Reactive nonmetal</span></li>
+                    <li><span class="p-label">Electronic Config</span><span class="p-val" id="p-config" style="font-size: 0.75rem; text-align: right;">1s1</span></li>
+                    <li><span class="p-label">Oxidation States</span><span class="p-val" id="p-oxidation">+1, -1</span></li>
+                    <li><span class="p-label">Write-up</span><a href="#" target="_blank" class="p-val p-link" id="p-wiki">Wikipedia ↗</a></li>
+                    <li>
+                        <span class="p-label">State at</span>
+                        <div class="state-ctrls">
+                            <input type="number" id="temp-input" value="25">
+                            <select id="temp-select">
+                                <option value="C">°C</option>
+                                <option value="F">°F</option>
+                                <option value="K">K</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li><span class="p-label">Phase</span><span class="p-val phase-gas" id="p-phase">Gas</span></li>
+                    <li><span class="p-label">Weight</span><span class="p-val" id="p-weight">1.008 u</span></li>
+                    <li><span class="p-label">Energy levels</span><span class="p-val" id="p-energy">1</span></li>
+                    <li><span class="p-label">Electronegativity</span><span class="p-val" id="p-electro">2.20</span></li>
+                    <li><span class="p-label">Melting point</span><span class="p-val" id="p-melt">-259.1 °C</span></li>
+                    <li><span class="p-label">Boiling point</span><span class="p-val" id="p-boil">-252.9 °C</span></li>
+                    <li><span class="p-label">Electron affinity</span><span class="p-val" id="p-affinity">72.8 kJ/mol</span></li>
+                    <li><span class="p-label">Ionization, 1st</span><span class="p-val" id="p-ionization">1312.0 kJ/mol</span></li>
+                    <li><span class="p-label">Density, STP</span><span class="p-val" id="p-density">0.0899 kg/m³</span></li>
+                    <li><span class="p-label">Conductivity, thermal</span><span class="p-val" id="p-cond">0.1805 W/mK</span></li>
+                    <li><span class="p-label">Heat, specific</span><span class="p-val" id="p-heat">14300 J/kgK</span></li>
+                    <li><span class="p-label">Abundance, universe</span><span class="p-val" id="p-abundance">75 %</span></li>
+                    <li><span class="p-label">Discovered</span><span class="p-val" id="p-discovered">1766 AD</span></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Interactive Area -->
+        <main class="pt-main">
+            <!-- Dynamic Toolbar -->
+            <header class="pt-toolbar glass-panel">
+                <label for="temp-slider" class="toolbar-label">Temperature</label>
+                <div class="slider-track-wrap">
+                    <input type="range" id="temp-slider" class="styled-slider" min="-273.15" max="726.85" value="25" step="0.1">
+                </div>
+                <div class="temp-readouts">
+                    <span id="readout-c">25.0 °C</span>
+                    <span id="readout-f">77.0 °F</span>
+                    <span id="readout-k">298.15 K</span>
+                </div>
+            </header>
+
+            <!-- Original Custom Grid -->
+            <div id="pt-grid-area" class="pt-grid-area">
+                <!-- Data injected by ptable.js -->
+                 
+                 <!-- Center Legend Overlay -->
+                 <div id="pt-legend" class="pt-legend-box glass-panel">
+                     <div class="legend-states">
+                         <div class="state-item"><span class="sym-solid">C</span> Solid</div>
+                         <div class="state-item"><span class="sym-liquid">Hg</span> Liquid</div>
+                         <div class="state-item"><span class="sym-gas">H</span> Gas</div>
+                         <div class="state-item"><span class="sym-unknown">Rf</span> Unknown</div>
+                     </div>
+                     <div class="legend-series">
+                         <div class="series-header metals-header">Metals</div>
+                         <div class="series-header metalloids-header">Metalloids</div>
+                         <div class="series-header nonmetals-header">Nonmetals</div>
+                         
+                         <div class="series-tag cat-alkali">Alkali metals</div>
+                         <div class="series-tag cat-alkaline">Alkaline earth</div>
+                         <div class="series-tag cat-lanthanoid">Lanthanoids</div>
+                         <div class="series-tag cat-actinoid">Actinoids</div>
+                         <div class="series-tag cat-transition">Transition metals</div>
+                         <div class="series-tag cat-metalloid">Metalloids</div>
+                         <div class="series-tag cat-nonmetal">Reactive nonmetal</div>
+                         <div class="series-tag cat-noble">Noble gases</div>
+                     </div>
+                 </div>
+            </div>
+
+        </main>
+
+        <!-- Periodic Trends Panel -->
+        <aside class="pt-trends-panel glass-panel">
+            <h3 class="trends-title">Periodic Trends</h3>
+            <div class="trend-select-wrap">
+                <select id="trend-select" class="prop-view-select">
+                    <option value="none">Default (Groups)</option>
+                    <option value="electronegativity">Electronegativity</option>
+                    <option value="ionization">1st Ionization Energy</option>
+                    <option value="affinity">Electron Affinity</option>
+                    <option value="radius">Atomic Radius</option>
+                </select>
+            </div>
+            <div id="trend-legend" class="trend-legend" style="display:none;">
+                <div class="trend-gradient"></div>
+                <div class="trend-labels">
+                    <span>Low</span>
+                    <span>High</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Original Implementation Scripts -->
+    <script src="ptable.js"></script>
+</body>
+</html>
+

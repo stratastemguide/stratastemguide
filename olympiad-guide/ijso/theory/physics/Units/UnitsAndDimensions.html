@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimensions and Analysis | IJSO Theory - Strata STEM Guide</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../../../style.css">
+    <link rel="stylesheet" href="../../../../../navbar.css">
+    <link rel="stylesheet" href="../../ijso.css">
+
+    <!-- KaTeX for Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            throwOnError: false
+        });"></script>
+</head>
+
+<body class="physics-theme">
+    <div class="grid-overlay"></div>
+    <div class="bg-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+    </div>
+
+    <!-- Global Navbar logic -->
+    <script src="../../../../../navbar.js"></script>
+    <script>
+        window.navbarConfig = { activePage: 'olympiad', rootPath: '../../../../../' };
+    </script>
+    <main class="theory-container" style="max-width: 1100px;">
+        <div class="theory-hero reveal" style="text-align: left; margin-bottom: 0.5rem;">
+            <br><br>
+            <h1 style="font-size: 3rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2); display: block; padding-bottom: 1rem;">Dimensions and Analysis</h1>
+            
+                <a href="../UnitsAndDimensions.html" class="back-theory-btn" style="margin-top: 0; font-size: 0.9rem;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Units
+                </a>
+                <a href="../../Physics.html" class="back-to-path-btn" style="display: none; margin-top: 0;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="19" y1="12" x2="5" y2="12"></line>
+                        <polyline points="12 19 5 12 12 5"></polyline>
+                    </svg>
+                    Back to Path
+                </a>
+            </div>
+
+            <script>
+                // Context-aware navigation
+                if (window.location.search.includes('mode=level')) {
+                    const backUnitsBtn = document.querySelector('.back-theory-btn');
+                    const backPathBtn = document.querySelector('.back-to-path-btn');
+                    if (backUnitsBtn) backUnitsBtn.style.display = 'none';
+                    if (backPathBtn) backPathBtn.style.display = 'inline-flex';
+                }
+            </script>
+        </div>
+
+        <div class="content-card reveal">
+            <!-- Section 1 -->
+            <section class="notes-section">
+                <h2>1. Defining Dimensions: The Physics "Data Type"</h2>
+                <p>While units like meters, feet, or inches describe the scale, Dimensions describe the fundamental nature of a quantity. In physics, we treat dimensions as a qualitative description.</p>
+                <div style="background: rgba(139, 92, 246, 0.05); padding: 1.25rem; border-radius: 12px; border-left: 4px solid #8b5cf6; margin: 1.5rem 0;">
+                    <p style="margin: 0;"><strong>Notation:</strong> We always place the quantity inside square brackets $[ ]$ to show we are discussing its dimension, not its value.</p>
+                    <p style="margin: 0.5rem 0 0 0;"><strong>The Big Three:</strong> Most mechanics problems only require $[M]$ (Mass), $[L]$ (Length), and $[T]$ (Time).</p>
+                </div>
+                
+                <h3 style="color: var(--physics-primary); margin-top: 1.5rem;">Why this is your best tool in an exam:</h3>
+                <ul>
+                    <li><strong>Consistency Check:</strong> You can verify if a complex equation is even possible. Both sides must have the same dimensions.</li>
+                    <li><strong>Conversion Factor Discovery:</strong> It helps you find how one unit relates to another.</li>
+                    <li><strong>Formula Derivation:</strong> If you know what factors a variable depends on, you can "build" the formula without memorizing it.</li>
+                </ul>
+            </section>
+
+            <!-- Section 2 -->
+            <section class="notes-section">
+                <h2>2. The 7 Fundamental SI Dimensions</h2>
+                <p>Every physical quantity, no matter how complex, is just a combination of these seven "base types."</p>
+                
+                <table class="notes-table">
+                    <thead>
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Dimension Symbol</th>
+                            <th>SI Unit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Length</td><td><span class="math-highlight">$[L]$</span></td><td>meter</td></tr>
+                        <tr><td>Mass</td><td><span class="math-highlight">$[M]$</span></td><td>kilogram</td></tr>
+                        <tr><td>Time</td><td><span class="math-highlight">$[T]$</span></td><td>second</td></tr>
+                        <tr><td>Electric Current</td><td><span class="math-highlight">$[I]$</span> or <span class="math-highlight">$[A]$</span></td><td>ampere</td></tr>
+                        <tr><td>Temperature</td><td><span class="math-highlight">$[\Theta]$</span></td><td>kelvin</td></tr>
+                        <tr><td>Amount of Substance</td><td><span class="math-highlight">$[N]$</span></td><td>mole</td></tr>
+                        <tr><td>Luminous Intensity</td><td><span class="math-highlight">$[J]$</span></td><td>candela</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Section 3 -->
+            <section class="notes-section">
+                <h2>3. Deep Dive: Derived Dimensions</h2>
+                <p>To master this, you must be able to break down common variables into their base dimensions quickly.</p>
+                <div class="responsive-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <!-- Area: Green -->
+                    <div style="background: rgba(34, 197, 94, 0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(34, 197, 94, 0.2); border-left: 4px solid #22c55e;">
+                        <h4 style="margin: 0; color: #22c55e; font-size: 1.1rem;">Area</h4>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1em;" class="math-highlight">$[L] \times [L] = \color{#22c55e}{[L^2]}$</p>
+                    </div>
+                    <!-- Volume: Sky Blue -->
+                    <div style="background: rgba(14, 165, 233, 0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.2); border-left: 4px solid #0ea5e9;">
+                        <h4 style="margin: 0; color: #0ea5e9; font-size: 1.1rem;">Volume</h4>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1em;" class="math-highlight">$[L] \times [L] \times [L] = \color{#0ea5e9}{[L^3]}$</p>
+                    </div>
+                    <!-- Velocity: Purple -->
+                    <div style="background: rgba(168, 85, 247, 0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(168, 85, 247, 0.2); border-left: 4px solid #a855f7;">
+                        <h4 style="margin: 0; color: #a855f7; font-size: 1.1rem;">Velocity</h4>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1em;" class="math-highlight">$\frac{\text{Length}}{\text{Time}} = \color{#a855f7}{[LT^{-1}]}$</p>
+                    </div>
+                    <!-- Acceleration: Orange -->
+                    <div style="background: rgba(249, 115, 22, 0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(249, 115, 22, 0.2); border-left: 4px solid #f97316;">
+                        <h4 style="margin: 0; color: #f97316; font-size: 1.1rem;">Acceleration</h4>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1em;" class="math-highlight">$\frac{\text{Velocity}}{\text{Time}} = \color{#f97316}{[LT^{-2}]}$</p>
+                    </div>
+                    <!-- Force: Red -->
+                    <div style="background: rgba(239, 68, 68, 0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2); border-left: 4px solid #ef4444;">
+                        <h4 style="margin: 0; color: #ef4444; font-size: 1.1rem;">Force <span style="font-size: 0.8em; opacity: 0.8; font-weight: normal;">(Mass &times; Accel)</span></h4>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1em;" class="math-highlight">$[M] \times [LT^{-2}] = \color{#ef4444}{[MLT^{-2}]}$</p>
+                    </div>
+                    <!-- Work/Energy: Yellow -->
+                    <div style="background: rgba(234, 179, 8, 0.05); padding: 1.25rem; border-radius: 12px; border: 1px solid rgba(234, 179, 8, 0.2); border-left: 4px solid #eab308;">
+                        <h4 style="margin: 0; color: #eab308; font-size: 1.1rem;">Work/Energy <span style="font-size: 0.8em; opacity: 0.8; font-weight: normal;">(Force &times; Dist)</span></h4>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1em;" class="math-highlight">$[MLT^{-2}] \times [L] = \color{#eab308}{[ML^2T^{-2}]}$</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section class="notes-section">
+                <h2>4. Advanced Application: The Method of Dimensions</h2>
+                <p>This is a favorite for IJSO theory papers. Let's look at how to derive a relationship from scratch.</p>
+                
+                <div style="background: rgba(34, 197, 94, 0.05); border-left: 4px solid #22c55e; padding: 1.5rem; border-radius: 0 12px 12px 0; margin: 2rem 0;">
+                    <h3 style="margin-top: 0; color: #22c55e;">Scenario</h3>
+                    <p>The period ($T$) of a simple pendulum depends on the mass of the bob ($m$), the length of the string ($l$), and the acceleration due to gravity ($g$).</p>
+                    <ol>
+                        <li><strong>Step 1: Set up the proportionality</strong>
+                            <p style="text-align: center; margin: 0.5rem 0;">$T \propto m^a l^b g^c$</p>
+                            <p style="text-align: center; margin: 0.5rem 0;">$T = k \cdot m^a l^b g^c$ <span style="opacity: 0.8; font-size: 0.9em;">(where $k$ is a dimensionless constant)</span></p>
+                        </li>
+                        <li style="margin-top: 1rem;"><strong>Step 2: Write the dimensions for each side</strong>
+                            <ul>
+                                <li>Period ($T$): $[M^0 L^0 T^1]$</li>
+                                <li>Mass ($m$): $[M^1 L^0 T^0]$</li>
+                                <li>Length ($l$): $[M^0 L^1 T^0]$</li>
+                                <li>Gravity ($g$): $[M^0 L^1 T^{-2}]$</li>
+                            </ul>
+                        </li>
+                        <li style="margin-top: 1rem;"><strong>Step 3: Equate the powers</strong>
+                            <p style="text-align: center; margin: 0.5rem 0;">$[T^1] = [M]^a [L]^b [LT^{-2}]^c$</p>
+                            <p style="text-align: center; margin: 0.5rem 0;">$[T^1] = M^a L^{b+c} T^{-2c}$</p>
+                            <ul>
+                                <li><strong>For $M$:</strong> $a = 0$ (This proves the period doesn't depend on mass!)</li>
+                                <li><strong>For $T$:</strong> $-2c = 1 \rightarrow c = -1/2$</li>
+                                <li><strong>For $L$:</strong> $b + c = 0 \rightarrow b - 1/2 = 0 \rightarrow b = 1/2$</li>
+                            </ul>
+                        </li>
+                        <li style="margin-top: 1rem;"><strong>Step 4: Final Formula</strong>
+                            <p style="text-align: center; margin: 0.5rem 0;">$T = k \cdot m^0 l^{1/2} g^{-1/2} \Rightarrow T = k \sqrt{\frac{l}{g}}$</p>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Section 5 -->
+            <section class="notes-section">
+                <h2>5. The "Silent" Rules & Limitations</h2>
+                <p>Dimensional analysis is powerful, but it has boundaries you must remember for your STEM guides:</p>
+                <div style="background: rgba(239, 68, 68, 0.05); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2); margin-top: 1rem;">
+                    <ul style="margin-bottom: 0;">
+                        <li><strong>The Constant Problem:</strong> You cannot find the value of dimensionless constants (like the $2\pi$ in the pendulum formula) using this method.</li>
+                        <li><strong>Function Blindness:</strong> Dimensions cannot handle logarithmic, exponential, or trigonometric functions. For example, in $\sin(\theta)$, the $\theta$ must be dimensionless.</li>
+                        <li><strong>Vector Blindness:</strong> Dimensions don't tell you if a quantity is a scalar or a vector.</li>
+                        <li><strong>The Addition Rule:</strong> You can only add or subtract terms with the same dimensions. This is called the Principle of Homogeneity.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Success Tips -->
+            <div class="callout-box reveal">
+                <h3>💡 Pro-Level Checklist</h3>
+                <ul>
+                    <li><strong>Does $[LHS] = [RHS]$?</strong></li>
+                    <li><strong>Are there any "hidden" constants</strong> (like $\pi$) I need to ignore?</li>
+                    <li><strong>Is the exponent math correct?</strong> (Remember: $\frac{1}{L^2} = L^{-2}$)</li>
+                </ul>
+            </div>
+
+            <!-- Completion Section -->
+            <div class="completion-section reveal" style="margin-top: 3rem; text-align: center; padding: 2rem; background: rgba(255, 215, 0, 0.05); border-radius: 20px; border: 1px dashed rgba(255, 215, 0, 0.3);">
+                <h3 style="font-family: 'Outfit', sans-serif; margin-bottom: 1rem;">Finished studying this topic?</h3>
+                <p style="margin-bottom: 1.5rem; opacity: 0.8;">Mark it as completed to unlock the next level in your Physics journey!</p>
+                <button id="completeBtn" class="complete-topic-btn">
+                    <span class="btn-text">Mark as Completed</span>
+                    <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+                <p id="statusMsg" style="margin-top: 1rem; font-size: 0.9rem; font-weight: 500; display: none;"></p>
+            </div>
+        </div>
+    </main>
+
+    <style>
+        .complete-topic-btn {
+            background: linear-gradient(135deg, #ffd700, #ffae00);
+            color: #000;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center; gap: 10px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .complete-topic-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .complete-topic-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .complete-topic-btn .check-icon {
+            width: 20px;
+            height: 20px;
+            display: none;
+        }
+
+        .complete-topic-btn.is-completed {
+            background: #22c55e;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+            cursor: default;
+        }
+
+        .complete-topic-btn.is-completed .check-icon {
+            display: block;
+        }
+
+        .complete-topic-btn.is-completed:hover {
+            transform: none;
+        }
+
+        .complete-topic-btn.loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        @media (max-width: 768px) {
+            .responsive-grid {
+                grid-template-columns: 1fr !important;
+            }
+            .theory-hero h1 {
+                font-size: 2rem !important;
+            }
+        }
+    </style>
+
+    <footer class="dynamic-footer reveal">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../../../../../logo.png" alt="Strata STEM Guide Logo">
+                    </div>
+                    <p>World's premier destination for high-end academic excellence.</p>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1rem;">
+                <p>&copy; 2026 Strata STEM Guide ACADEMY. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../../../../../main.js"></script>
+
+    <script type="module">
+        import { auth, db } from '../../../../../firebase-config.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+        import { doc, getDoc, setDoc, arrayUnion } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js";
+
+        const completeBtn = document.getElementById('completeBtn');
+        const statusMsg = document.getElementById('statusMsg');
+        const topicId = 'dimensions'; // Unique ID for this topic
+        let currentUser = null;
+
+        // Initialize State
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                currentUser = user;
+            } else {
+                currentUser = null;
+                completeBtn.querySelector('.btn-text').innerText = 'Log in to Track Progress';
+                completeBtn.style.opacity = '0.5';
+                completeBtn.style.cursor = 'not-allowed';
+            }
+        });
+
+        function markUIAsCompleted() {
+            completeBtn.classList.add('is-completed');
+            completeBtn.querySelector('.btn-text').innerText = 'Topic Completed ✨';
+            statusMsg.innerText = "Awesome! You've mastered this topic.";
+            statusMsg.style.display = 'block';
+            statusMsg.style.color = '#22c55e';
+            completeBtn.disabled = true;
+        }
+
+        completeBtn.addEventListener('click', async () => {
+            if (!currentUser) {
+                alert("Please log in to save your progress!");
+                return;
+            }
+            if (completeBtn.classList.contains('is-completed')) return;
+
+            completeBtn.classList.add('loading');
+            completeBtn.querySelector('.btn-text').innerText = 'Saving Progress...';
+
+            try {
+                const docRef = doc(db, "userProgress", currentUser.uid);
+                await setDoc(docRef, {
+                    completedTopics: arrayUnion(topicId)
+                }, { merge: true });
+
+                markUIAsCompleted();
+            } catch (error) {
+                console.error("Error saving progress:", error);
+                statusMsg.innerText = "Oops! Something went wrong. Please try again.";
+                statusMsg.style.display = 'block';
+                statusMsg.style.color = '#ef4444';
+                completeBtn.querySelector('.btn-text').innerText = 'Mark as Completed';
+            } finally {
+                completeBtn.classList.remove('loading');
+            }
+        });
+    </script>
+</body>
+
+</html>
+
